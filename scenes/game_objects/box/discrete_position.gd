@@ -1,6 +1,9 @@
 extends Object
 class_name DiscretePosition
 
+signal move_started(current_position: Vector3i, target_position: Vector3i)
+signal move_stopped(previous_position: Vector3i, current_position: Vector3i)
+
 var owner: Node3D
 var move_speed: float = 6.0
 
@@ -26,10 +29,9 @@ func _get_discrete_position() -> Vector3i:
 
 
 func move(direction: Vector3i) -> void:
-	if is_moving: return
+	assert(lerp_progress >= 1.0 and not is_moving, "Cannot start a new move until the previous one is complete.")
 	is_moving = true
-	
-	assert(lerp_progress >= 1.0, "Cannot start a new move until the previous one is complete.")
+	move_started.emit(current_position, target_position)
 
 	target_position = current_position + direction
 	lerp_progress = 0.0
@@ -45,5 +47,7 @@ func tick(delta: float) -> void:
 	
 	if lerp_progress >= 1.0:
 		is_moving = false
+		move_stopped.emit(current_position, target_position)
+
 		current_position = target_position
 		owner.global_position = Vector3(current_position)
