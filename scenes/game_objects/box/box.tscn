@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5q5fp0n2evh5"]
+
+[ext_resource type="Script" uid="uid://d04vjmfuiccdm" path="res://scenes/game_objects/box/box.gd" id="1_13hcd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xwdok"]
+size = Vector3(0.8, 0.8, 0.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0binv"]
+size = Vector3(0.8, 0.8, 0.8)
+
+[node name="Box" type="CharacterBody3D" groups=["box"]]
+script = ExtResource("1_13hcd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+mesh = SubResource("BoxMesh_xwdok")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+shape = SubResource("BoxShape3D_0binv")

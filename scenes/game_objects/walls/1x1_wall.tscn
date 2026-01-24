@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://csuf1xqs6vjb"]
+
+[ext_resource type="PackedScene" uid="uid://da6baplelwvuu" path="res://scenes/game_objects/walls/solid_cell.tscn" id="1_fsdlq"]
+[ext_resource type="Material" uid="uid://8u78axk6oy0t" path="res://scenes/game_objects/walls/wall_material.tres" id="1_w6b4t"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rqlbp"]
+material = ExtResource("1_w6b4t")
+
+[node name="1x1 Wall" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.655, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_rqlbp")
+
+[node name="SolidCell" parent="." instance=ExtResource("1_fsdlq")]

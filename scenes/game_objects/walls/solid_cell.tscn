@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://da6baplelwvuu"]
+
+[ext_resource type="Script" uid="uid://b2u0olycvmkd0" path="res://scenes/game_objects/walls/solid_cell.gd" id="1_dexts"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h06om"]
+transparency = 1
+albedo_color = Color(0.87140524, 0.37986767, 0.21238753, 0.49411765)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rrch6"]
+material = SubResource("StandardMaterial3D_h06om")
+
+[node name="SolidCell" type="Node3D" groups=["wall"]]
+script = ExtResource("1_dexts")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_rrch6")
+skeleton = NodePath("../..")
