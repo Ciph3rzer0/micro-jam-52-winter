@@ -6,6 +6,11 @@ var objects : Dictionary[Node3D, DiscretePosition] = {}
 func _ready() -> void:
 	pass
 
+
+func get_object_at_position(position: Vector3i) -> DiscretePosition:
+	return cells.get(position)
+
+
 func add_object_to_grid(new_object: Node3D) -> void:
 	assert(objects.get(new_object) == null, "Node is already registered in the level grid.")
 	assert("discrete_position" in new_object, "Node does not have a DiscretePosition component.")

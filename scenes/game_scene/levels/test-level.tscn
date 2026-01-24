@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://df4bxhyn077o6"]
+[gd_scene load_steps=11 format=3 uid="uid://df4bxhyn077o6"]
 
 [ext_resource type="Shader" uid="uid://c8ai7r3nu55c3" path="res://assets/shaders/concrete_floor.gdshader" id="1_xwdok"]
 [ext_resource type="PackedScene" uid="uid://c5q5fp0n2evh5" path="res://scenes/game_objects/box/box.tscn" id="2_k1xfd"]
 [ext_resource type="PackedScene" uid="uid://uojhyjljopka" path="res://scenes/game_objects/player/player.tscn" id="3_h06om"]
+[ext_resource type="PackedScene" uid="uid://dfql0pxloe6dm" path="res://scenes/game_objects/loading_zone/loading_zone.tscn" id="4_h06om"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cmaj0"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -58,8 +59,23 @@ shape = SubResource("BoxShape3D_xwdok")
 [node name="Box2" parent="." instance=ExtResource("2_k1xfd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
+[node name="Box3" parent="." instance=ExtResource("2_k1xfd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Box4" parent="." instance=ExtResource("2_k1xfd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+
+[node name="Box5" parent="." instance=ExtResource("2_k1xfd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="Box6" parent="." instance=ExtResource("2_k1xfd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
+
 [node name="Player" parent="." instance=ExtResource("3_h06om")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8766217, 0, -0.00689888)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.82858837, 0.5598583, 0, -0.5598583, 0.82858837, 0, 2.7798924, 3.3822029)
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.82858837, 0.5598583, 0, -0.5598583, 0.82858837, 0.20847774, 3.589372, 3.925222)
+
+[node name="Loading Zone" parent="." instance=ExtResource("4_h06om")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
