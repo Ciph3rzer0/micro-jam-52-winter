@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://df4bxhyn077o6"]
+[gd_scene load_steps=12 format=3 uid="uid://df4bxhyn077o6"]
 
 [ext_resource type="Shader" uid="uid://c8ai7r3nu55c3" path="res://assets/shaders/concrete_floor.gdshader" id="1_xwdok"]
 [ext_resource type="PackedScene" uid="uid://c5q5fp0n2evh5" path="res://scenes/game_objects/box/box.tscn" id="2_k1xfd"]
 [ext_resource type="PackedScene" uid="uid://uojhyjljopka" path="res://scenes/game_objects/player/player.tscn" id="3_h06om"]
 [ext_resource type="PackedScene" uid="uid://dfql0pxloe6dm" path="res://scenes/game_objects/loading_zone/loading_zone.tscn" id="4_h06om"]
+[ext_resource type="PackedScene" uid="uid://debgq70csi5ki" path="res://scenes/game_objects/walls/2x_2_wall.tscn" id="6_hydqh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cmaj0"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -79,3 +80,9 @@ transform = Transform3D(1, 0, 0, 0, 0.82858837, 0.5598583, 0, -0.5598583, 0.8285
 
 [node name="Loading Zone" parent="." instance=ExtResource("4_h06om")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
+
+[node name="2x2 Wall" parent="." instance=ExtResource("6_hydqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)
+
+[node name="2x2 Wall2" parent="." instance=ExtResource("6_hydqh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 0, 3)
