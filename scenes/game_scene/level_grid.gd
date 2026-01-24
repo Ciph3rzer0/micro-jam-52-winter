@@ -24,11 +24,12 @@ func add_object_to_grid(new_object: Node3D) -> void:
 	objects[new_object] = new_object.discrete_position
 
 # A player can push boxes.  So we move the box ahead one cell and the player takes up two cells temporarily.
-func try_move_player(moving_object: Node3D, relative_motion: Vector3i) -> bool:
-	assert_grid_object_is_valid(moving_object)
+func try_move_player(moving_player: Node3D, relative_motion: Vector3i) -> bool:
+	assert_grid_object_is_valid(moving_player)
 	assert(relative_motion.length() == 1, "Relative motion must be to an adjacent cell.")
 
-	var new_position: Vector3i = moving_object.discrete_position.current_position + relative_motion
+	# Check if player's can walk or push to target position.
+	var new_position: Vector3i = moving_player.discrete_position.current_position + relative_motion
 
 	# Check if there is no object at target position or that it is push-able
 	var object_at_new_position: DiscretePosition = cells.get(new_position)
@@ -45,7 +46,14 @@ func try_move_player(moving_object: Node3D, relative_motion: Vector3i) -> bool:
 		print("Cell is already occupied.")
 		return false
 
-	return try_move_object(moving_object, relative_motion)
+	# Check if player's head will hit anything
+	var new_position_head: Vector3i = moving_player.discrete_position.current_position + relative_motion + Vector3i.UP
+	var object_at_new_position_head: DiscretePosition = cells.get(new_position_head)
+	if(object_at_new_position_head != null):
+		print("Cannot move player because head is blocked.")
+		return false
+
+	return try_move_object(moving_player, relative_motion)
 
 
 func try_move_object(moving_object: Node3D, relative_motion: Vector3i, move_instantly = false) -> bool:
