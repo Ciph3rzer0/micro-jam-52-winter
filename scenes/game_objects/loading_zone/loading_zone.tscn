@@ -1,44 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfql0pxloe6dm"]
 
 [ext_resource type="Script" uid="uid://14b0ismtdrob" path="res://scenes/game_objects/loading_zone/loading_zone.gd" id="1_hx523"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_k1xfd"]
-size = Vector3(0.95, 0.1, 0.95)
+[ext_resource type="PackedScene" uid="uid://yxh6nkn6md4o" path="res://scenes/game_objects/loading_zone/loading_slot.tscn" id="2_s2msx"]
 
 [node name="Loading Zone" type="Node3D"]
 script = ExtResource("1_hx523")
 
-[node name="Loading Slot 1" type="Marker3D" parent="."]
+[node name="Loading Slot 1" parent="." instance=ExtResource("2_s2msx")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Loading Slot 1"]
-mesh = SubResource("BoxMesh_k1xfd")
-
-[node name="Loading Slot 2" type="Marker3D" parent="."]
+[node name="Loading Slot 2" parent="." instance=ExtResource("2_s2msx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Loading Slot 2"]
-mesh = SubResource("BoxMesh_k1xfd")
-
-[node name="Loading Slot 3" type="Marker3D" parent="."]
+[node name="Loading Slot 3" parent="." instance=ExtResource("2_s2msx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Loading Slot 3"]
-mesh = SubResource("BoxMesh_k1xfd")
-
-[node name="Loading Slot 4" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Loading Slot 4"]
-mesh = SubResource("BoxMesh_k1xfd")
-
-[node name="Loading Slot 5" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Loading Slot 5"]
-mesh = SubResource("BoxMesh_k1xfd")
-
-[node name="Loading Slot 6" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Loading Slot 6"]
-mesh = SubResource("BoxMesh_k1xfd")
