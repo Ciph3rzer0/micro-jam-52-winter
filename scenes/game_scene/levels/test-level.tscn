@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://df4bxhyn077o6"]
+
+[ext_resource type="Shader" uid="uid://c8ai7r3nu55c3" path="res://assets/shaders/concrete_floor.gdshader" id="1_xwdok"]
+[ext_resource type="PackedScene" uid="uid://c5q5fp0n2evh5" path="res://scenes/game_objects/box/box.tscn" id="2_k1xfd"]
+[ext_resource type="PackedScene" uid="uid://uojhyjljopka" path="res://scenes/game_objects/player/player.tscn" id="3_h06om"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cmaj0"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_xwdok"]
+sky_material = SubResource("ProceduralSkyMaterial_cmaj0")
+
+[sub_resource type="Environment" id="Environment_0binv"]
+background_mode = 2
+sky = SubResource("Sky_xwdok")
+tonemap_mode = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0binv"]
+render_priority = 0
+shader = ExtResource("1_xwdok")
+shader_parameter/base_color = Color(0.27509058, 0.27509058, 0.2750905, 1)
+shader_parameter/line_color = Color(0.1, 0.1, 0.1, 1)
+shader_parameter/splotch_color = Color(0.19315353, 0.19315356, 0.19315338, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cmaj0"]
+material = SubResource("ShaderMaterial_0binv")
+size = Vector3(100, 2, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xwdok"]
+size = Vector3(100, 2, 100)
+
+[node name="TestLevel" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(1, 0.9607843, 0.9019608, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0binv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("BoxMesh_cmaj0")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("BoxShape3D_xwdok")
+
+[node name="Box" parent="." instance=ExtResource("2_k1xfd")]
+
+[node name="Player" parent="." instance=ExtResource("3_h06om")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4741601)

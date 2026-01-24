@@ -48,6 +48,12 @@ Sokoban on ice and snow.  Packing facility.
 	- Maybe snow accumulates over time, changing the field.
 	- Urgency: more boxes keep dropping into the field and you have to keep packing to stay ahead
 		(Very loosely, like Tetris)
+	- Buying small automation upgrades
+		- Or, deliver resources to a specific spot to get an upgrade, unlock as shortcut
+		conveyer belts
+		destructible walls
+		launcher
+		stacker 
 	
 Ice Baneling
 	- Get from point a to point b on ice.
@@ -63,6 +69,12 @@ Traffic Control
 Cozy cafe
 	- but you actually do all the jobs but have to maintain the cozy vibe in front of the customers (part overcooked, part stealth game)
 	- Serve hot coco, snowcones, etc.
+	Loading onto delivery truck
+	movement must feel great.
+
+	Start with a kernel we understand very well
+	Start as pure sokobon
+	door on the right, boxes from left to right.
 
 Maria's ideas:
 
@@ -75,6 +87,39 @@ Iditarod race
 	- overworked doggies pulling sleds husky or siberian huskies
 
 
+A few immediate thoughts on your notes:
+
+> elf present factory
+I like the idea of having to lie, (cook the books) to get through being overworked.
+
+> santa delivering presents overnight
+I love this if we really exaggerate the course, like a roll-a-ball level.
+
+> embodying the feelings of the shovel skidding along lightly dusted surface and of the sudden resistance when wet snow rapidly piles up
+Interesting.  You use your mouse to shovel and have to like, back it up and get speed?  lol.
+
+> snake-like (one snake for shove, other for salt, have to return for energizing cocoa)
+🤔
+Two snakes at once.
+wasd and arrow keys.
+Shovel snow before salt
+Clear
+Ice
+Low snow 
+High Snow 
+
+With Difficulty -> More accumulation of snow, low snow -> high snow.
+More obstacles with difficulty.
+Stay off yard
+avoid trash can, wind blows it around
+
+
+> christmas lights (rhythm game syncing songs to lightshow)
+I love it, and sounds fun.  Like DDR or OSU?  I guess what makes ours different though?  Probably need some kind of twist to make it unique.
+
+
+For overworked theme:
+- Any time trial works.
 
 
 
