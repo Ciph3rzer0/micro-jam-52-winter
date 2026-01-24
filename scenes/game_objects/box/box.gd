@@ -1,11 +1,14 @@
 extends CharacterBody3D
 class_name MovableObject
 
+@export var PUSH_SPEED: float = 5.0
+
 var discrete_position : DiscretePosition
 
 # A box needs to hold discrete positions and move towards an adjacent tile
 func _ready() -> void:
 	discrete_position = DiscretePosition.new(self)
+	discrete_position.move_speed = PUSH_SPEED
 	LevelGrid.add_object_to_grid(self)
 
 

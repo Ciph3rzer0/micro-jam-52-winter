@@ -5,7 +5,7 @@ signal move_started(current_position: Vector3i, target_position: Vector3i)
 signal move_stopped(previous_position: Vector3i, current_position: Vector3i)
 
 var owner: Node3D
-var move_speed: float = 6.0
+var move_speed: float = 4.0
 
 var is_moving = false
 var lerp_progress: float = 1.0

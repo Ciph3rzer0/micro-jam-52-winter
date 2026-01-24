@@ -38,7 +38,9 @@ func try_move_player(moving_player: Node3D, relative_motion: Vector3i) -> bool:
 		# Try to push the object
 		if object_at_new_position.owner.is_in_group("box"):
 			var push_successful: bool = try_move_object(object_at_new_position.owner, relative_motion, true)
-			if(not push_successful):
+			if(push_successful):
+				moving_player.set_push_speed(object_at_new_position)
+			else:
 				print("Cannot move player because object cannot be pushed.")
 				return false
 	
