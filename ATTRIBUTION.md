@@ -1,4 +1,10 @@
+
 # Attribution
+
+### Squirrel Team
+Ciph3rZer0 (code)
+FRKatona (art)
+
 ## Collaborators
 
 ### Godot Game Template
