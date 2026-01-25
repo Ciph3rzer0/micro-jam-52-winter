@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b7ulffon24ubq"]
+
+[ext_resource type="Shader" uid="uid://b0k62xm7culcs" path="res://scenes/game_objects/conveyer/conveyer_belt.gdshader" id="1_c1fgx"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_c1fgx")
+shader_parameter/belt_color = Color(0.05, 0.05, 0.05, 1)
+shader_parameter/line_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/speed = 0.50000002375
+shader_parameter/line_thickness = 0.02
+shader_parameter/chevron_frequency = 5.0

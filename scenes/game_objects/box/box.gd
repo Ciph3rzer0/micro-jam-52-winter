@@ -18,3 +18,11 @@ func _process(delta: float) -> void:
 			LevelGrid.try_move_object(self, Vector3i(1, 0, 0))
 
 	discrete_position.tick(delta)
+
+
+func set_convey_speed(conveyer: DiscretePosition) -> void:
+	discrete_position.move_speed = conveyer.owner.CONVEY_SPEED
+	discrete_position.move_stopped.connect(_on_box_move_stopped, CONNECT_ONE_SHOT)
+
+func _on_box_move_stopped(_previous_position: Vector3i, _current_position: Vector3i) -> void:
+	discrete_position.move_speed = PUSH_SPEED
