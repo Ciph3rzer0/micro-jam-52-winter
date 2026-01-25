@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct7qv3dfqyj2a"]
+
+[ext_resource type="PackedScene" uid="uid://yew34yj1wrc7" path="res://scenes/game_objects/walls/4x4_wall_shelf.tscn" id="1_ayqv6"]
+[ext_resource type="PackedScene" uid="uid://d1rrgirm3hmxv" path="res://assets/models/environment/wall_window.glb" id="2_jhqq7"]
+[ext_resource type="Shader" uid="uid://bgx3deyav5itt" path="res://assets/shaders/snow_haze.gdshader" id="3_jhqq7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_snow"]
+render_priority = 0
+shader = ExtResource("3_jhqq7")
+shader_parameter/snow_color = Color(1, 1, 1, 1)
+shader_parameter/haze_color = Color(0.6, 0.7, 0.8, 1)
+shader_parameter/snow_speed = 0.4
+shader_parameter/wind_strength = 0.3
+shader_parameter/snow_density = 0.95
+shader_parameter/haze_density = 0.5
+
+[sub_resource type="QuadMesh" id="QuadMesh_hjc3k"]
+material = SubResource("ShaderMaterial_snow")
+size = Vector2(20, 10)
+
+[node name="4x4_wall_shelf" instance=ExtResource("1_ayqv6")]
+
+[node name="wall_shelf" parent="." index="16"]
+visible = false
+
+[node name="wall_window" parent="." index="17" instance=ExtResource("2_jhqq7")]
+transform = Transform3D(1.2066915, 0, 0, 0, 1.4033535, 0, 0, 0, 1, -0.07189083, 0.052748926, 0.8980434)
+
+[node name="SnowPlane" type="MeshInstance3D" parent="wall_window" index="1"]
+transform = Transform3D(-0.40073338, 6.112416e-08, 0.00096403545, -3.5033253e-08, -0.6991793, 0, 0.0005525353, -8.427864e-11, 0.6991786, 0.21294257, 2.3159435, -2.2410426)
+transparency = 0.1
+cast_shadow = 0
+mesh = SubResource("QuadMesh_hjc3k")

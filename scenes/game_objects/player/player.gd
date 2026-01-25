@@ -72,7 +72,19 @@ func _process(delta: float) -> void:
 	discrete_position.tick(delta)
 	_update_animation_state()
 
+@export var step_interval: int = 2
+@export var step_delay: float = 0.0
+
+var move_count: int = 0
+
 func _on_move_started(_current: Vector3i, _target: Vector3i) -> void:
+	move_count += 1
+	if move_count % step_interval != 0:
+		return
+
+	if step_delay > 0:
+		await get_tree().create_timer(step_delay).timeout
+
 	if step_alternator:
 		audio_steps.stream = AUDIO_STEP_1
 	else:
@@ -86,7 +98,7 @@ func set_push_speed(box: DiscretePosition) -> void:
 	box.move_stopped.connect(_on_box_move_stopped, CONNECT_ONE_SHOT)
 	
 	audio_sfx.stream = AUDIO_GRUNT
-	audio_sfx.volume_db = -20.0
+	audio_sfx.volume_db = -10.0
 	audio_sfx.play()
 
 func _on_box_move_stopped(_previous_position: Vector3i, _current_position: Vector3i) -> void:
@@ -121,7 +133,7 @@ func _update_animation_state() -> void:
 
 	if discrete_position.is_moving or not move_queue.is_empty():
 		if is_pushing:
-			_play_animation("shove")
+			_play_animation("shove-loop")
 		else:
 			_play_animation("walk")
 	else:

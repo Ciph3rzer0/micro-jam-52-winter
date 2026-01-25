@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjpaanb4d6lw3"]
+
+[ext_resource type="PackedScene" uid="uid://qjkykoo75d58" path="res://assets/models/character.glb" id="1_d7i8w"]
+[ext_resource type="Script" uid="uid://mloo7peo73k4" path="res://assets/models/NPC.gd" id="2_yudww"]
+[ext_resource type="PackedScene" uid="uid://bgaxy61nv244g" path="res://assets/models/props/barrel.glb" id="4_g1vvn"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("2_yudww")
+
+[node name="character2" parent="CharacterBody3D" instance=ExtResource("1_d7i8w")]
+transform = Transform3D(0.5524958, 0, 0, 0, 0.5524958, 0, 0, 0, 0.5524958, 0, 1.8865192, 0)
+
+[node name="AudioStreamPlayer3D_SFX" type="AudioStreamPlayer3D" parent="CharacterBody3D"]
+
+[node name="Timer" type="Timer" parent="CharacterBody3D"]
+wait_time = 10.0
+autostart = true
+ignore_time_scale = true
+
+[node name="barrel2" parent="." instance=ExtResource("4_g1vvn")]
