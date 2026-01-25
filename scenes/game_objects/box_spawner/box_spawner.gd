@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 func spawn() -> void:
-	var spawn_position: Vector3 = global_position + Vector3(0, 1, 0)
+	var spawn_position: Vector3 = global_position.round()
 	if LevelGrid.is_cell_occupied(spawn_position):
 		print("Cannot spawn box: cell is occupied.")
 		return

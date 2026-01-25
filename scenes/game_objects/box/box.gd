@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 	# Gravity check - if there's no floor below, fall down
 	if not discrete_position.is_moving:
 		if discrete_position.current_position.y > 0:
-			if LevelGrid.get_object_at_position(discrete_position.current_position - Vector3i.DOWN) == null:
+			if LevelGrid.get_object_at_position(discrete_position.current_position + Vector3i.DOWN) == null:
 				LevelGrid.try_move_object(self, Vector3i.DOWN)
 
 	discrete_position.tick(delta)

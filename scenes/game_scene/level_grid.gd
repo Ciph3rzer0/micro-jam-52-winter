@@ -45,15 +45,16 @@ func try_move_player(moving_player: Node3D, relative_motion: Vector3i) -> bool:
 	if(object_at_new_position != null):
 		# Try to push the object
 		if object_at_new_position.owner.is_in_group("box"):
-			var push_successful: bool = try_move_object(object_at_new_position.owner, relative_motion, true)
-			if(push_successful):
-				moving_player.set_push_speed(object_at_new_position)
-			else:
-				print("Cannot move player because object cannot be pushed.")
-				return false
+			if not object_at_new_position.is_moving and object_at_new_position.lerp_progress >= 1.0:
+				var push_successful: bool = try_move_object(object_at_new_position.owner, relative_motion, true)
+				if(push_successful):
+					moving_player.set_push_speed(object_at_new_position)
+				else:
+					print("Cannot move player because object cannot be pushed.")
+					return false
 	
 	if(cells.has(new_position)):
-		print("Cell is already occupied.")
+		print("try_move_player:: Cell is already occupied.  at position: ", new_position)
 		return false
 
 	# Check if player's head will hit anything
@@ -72,7 +73,7 @@ func try_move_object(moving_object: Node3D, relative_motion: Vector3i, move_inst
 
 	var new_position: Vector3i = moving_object.discrete_position.current_position + relative_motion
 	if(cells.has(new_position)):
-		print("Cell is already occupied.")
+		print("try_move_object:: Cell is already occupied.  at position: ", new_position)
 		return false
 
 	# Cell temporarily occupies two positions while moving	

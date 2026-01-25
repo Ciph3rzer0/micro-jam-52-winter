@@ -11,6 +11,7 @@ size = Vector3(0.8, 0.8, 0.8)
 
 [node name="Box" type="CharacterBody3D" groups=["box"]]
 script = ExtResource("1_13hcd")
+metadata/_edit_group_ = true
 
 [node name="crate2" parent="." instance=ExtResource("2_lhwlv")]
 transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 3.172, 0.911, 0)
