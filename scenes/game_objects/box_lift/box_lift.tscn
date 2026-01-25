@@ -1,11 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhadqlrfg3bh2"]
+[gd_scene load_steps=3 format=3 uid="uid://bhadqlrfg3bh2"]
 
 [ext_resource type="PackedScene" uid="uid://d1uvtgyu0h4vq" path="res://scenes/game_objects/conveyer/conveyer.tscn" id="1_27m5g"]
+[ext_resource type="PackedScene" uid="uid://bmxp6f20ov4fy" path="res://assets/models/interactive/lift.glb" id="2_68i2q"]
 
 [node name="BoxLift" type="Node3D"]
 
 [node name="Conveyer" parent="." instance=ExtResource("1_27m5g")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+visible = false
 
 [node name="Conveyer2" parent="." instance=ExtResource("1_27m5g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+
+[node name="lift" parent="." instance=ExtResource("2_68i2q")]
+transform = Transform3D(0.56661594, 0, 0, 0, 0.56661594, 0, 0, 0, 0.56661594, 0, 0.40358, 0)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://uojhyjljopka"]
 
 [ext_resource type="Script" uid="uid://bt30hmwshxact" path="res://scenes/game_objects/player/player.gd" id="1_7uu8a"]
-[ext_resource type="PackedScene" uid="uid://qjkykoo75d58" path="res://assets/models/character.glb" id="2_tuuoe"]
+[ext_resource type="PackedScene" uid="uid://drb8j1r4k28vl" path="res://assets/models/character_2.tscn" id="2_tuuoe"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xwdok"]
 radius = 0.3
@@ -32,7 +32,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_7uu8a")
 
 [node name="character" parent="." instance=ExtResource("2_tuuoe")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.00417459, 0.00019389391, 0.0075776577)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="AudioStreamPlayer3D_Steps" type="AudioStreamPlayer3D" parent="."]
 
