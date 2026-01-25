@@ -82,6 +82,7 @@ func clear_loading_zone() -> void:
 		if object != null and object.owner.is_in_group("box"):
 			print("Removing box at position: ", slot.current_position)
 			object.owner.collect_box()
+			owner.score_a_box()
 		else:
 			assert(false, "Expected a box at loading zone position: %s" % slot.current_position)
 

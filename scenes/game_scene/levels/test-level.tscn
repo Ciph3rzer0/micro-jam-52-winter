@@ -41,6 +41,20 @@ size = Vector3(100, 2, 100)
 
 [node name="TestLevel" type="Node3D"]
 script = ExtResource("1_cmrtd")
+blocks_to_win = 6
+
+[node name="Score" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="Score"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "SCORE COLLECTED "
+
+[node name="Score" type="Label" parent="Score"]
+unique_name_in_owner = true
+offset_left = 155.0
+offset_right = 303.0
+offset_bottom = 23.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
