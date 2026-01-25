@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://14b0ismtdrob" path="res://scenes/game_objects/loading_zone/loading_zone.gd" id="1_hx523"]
 [ext_resource type="PackedScene" uid="uid://yxh6nkn6md4o" path="res://scenes/game_objects/loading_zone/loading_slot.tscn" id="2_s2msx"]
 
-[node name="Loading Zone" type="Node3D"]
+[node name="Loading Zone" type="Node3D" groups=["loading_zone"]]
 script = ExtResource("1_hx523")
 
 [node name="Loading Slot 1" parent="." instance=ExtResource("2_s2msx")]
