@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://df4bxhyn077o6"]
+[gd_scene load_steps=18 format=3 uid="uid://df4bxhyn077o6"]
 
 [ext_resource type="Shader" uid="uid://c8ai7r3nu55c3" path="res://assets/shaders/concrete_floor.gdshader" id="1_xwdok"]
 [ext_resource type="PackedScene" uid="uid://c5q5fp0n2evh5" path="res://scenes/game_objects/box/box.tscn" id="2_k1xfd"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ba7xl40hutxsb" path="res://scenes/game_objects/ice_tile/ice_tile.tscn" id="8_shv0j"]
 [ext_resource type="PackedScene" uid="uid://d1uvtgyu0h4vq" path="res://scenes/game_objects/conveyer/conveyer.tscn" id="9_egtm3"]
 [ext_resource type="PackedScene" uid="uid://bhadqlrfg3bh2" path="res://scenes/game_objects/box_lift/box_lift.tscn" id="10_1lhyj"]
+[ext_resource type="PackedScene" uid="uid://hag642xd317p" path="res://scenes/game_objects/box_spawner/BoxSpawner.tscn" id="11_esraa"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cmaj0"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -167,3 +168,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
 [node name="IceTile11" parent="." instance=ExtResource("8_shv0j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 6)
+
+[node name="BoxSpawner" parent="." instance=ExtResource("11_esraa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3)

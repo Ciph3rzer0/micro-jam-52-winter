@@ -39,6 +39,7 @@ player=""
 wall=""
 loading_zone=""
 ice_tile=""
+timed_spawner=""
 
 [gui]
 

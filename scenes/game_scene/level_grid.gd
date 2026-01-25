@@ -11,11 +11,22 @@ func get_object_at_position(position: Vector3i) -> DiscretePosition:
 	return cells.get(position)
 
 
-func add_object_to_grid(new_object: Node3D) -> void:
+func is_cell_occupied(position: Vector3i) -> bool:
+	return cells.has(position)
+
+
+func can_add_object_to_grid(new_object: Node3D) -> bool:
 	assert_object_is_discrete_position(new_object)
 	var position: Vector3i = new_object.discrete_position.current_position
 
-	assert(not cells.has(position), "Cell is already occupied.")
+	return not is_cell_occupied(position)
+
+
+func add_object_to_grid(new_object: Node3D) -> void:
+	var cell_free = can_add_object_to_grid(new_object)
+	assert(cell_free, "Cell is already occupied.")
+
+	var position: Vector3i = new_object.discrete_position.current_position
 
 	cells[position] = new_object.discrete_position
 	objects[new_object] = new_object.discrete_position
