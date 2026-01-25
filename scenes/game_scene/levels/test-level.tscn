@@ -1,12 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://df4bxhyn077o6"]
+[gd_scene load_steps=15 format=3 uid="uid://bh2jb25rafb6b"]
 
-[ext_resource type="Shader" uid="uid://c8ai7r3nu55c3" path="res://assets/shaders/concrete_floor.gdshader" id="1_xwdok"]
-[ext_resource type="PackedScene" uid="uid://c5q5fp0n2evh5" path="res://scenes/game_objects/box/box.tscn" id="2_k1xfd"]
-[ext_resource type="PackedScene" uid="uid://uojhyjljopka" path="res://scenes/game_objects/player/player.tscn" id="3_h06om"]
-[ext_resource type="PackedScene" uid="uid://dfql0pxloe6dm" path="res://scenes/game_objects/loading_zone/loading_zone.tscn" id="4_h06om"]
-[ext_resource type="PackedScene" uid="uid://debgq70csi5ki" path="res://scenes/game_objects/walls/2x2_wall.tscn" id="6_hydqh"]
-[ext_resource type="PackedScene" uid="uid://csuf1xqs6vjb" path="res://scenes/game_objects/walls/1x1_wall.tscn" id="6_tofql"]
-[ext_resource type="PackedScene" uid="uid://c1p4dep5mcuf" path="res://scenes/game_objects/walls/1x2_wall.tscn" id="7_shv0j"]
+[ext_resource type="Shader" uid="uid://c8ai7r3nu55c3" path="res://assets/shaders/concrete_floor.gdshader" id="1_fssld"]
+[ext_resource type="Script" uid="uid://cvigyijtqq7bf" path="res://scenes/game_scene/levels/slevel_trigger.gd" id="1_shv0j"]
+[ext_resource type="PackedScene" uid="uid://c5q5fp0n2evh5" path="res://scenes/game_objects/box/box.tscn" id="2_yv0gm"]
+[ext_resource type="PackedScene" uid="uid://uojhyjljopka" path="res://scenes/game_objects/player/player.tscn" id="3_66dlx"]
+[ext_resource type="PackedScene" uid="uid://dfql0pxloe6dm" path="res://scenes/game_objects/loading_zone/loading_zone.tscn" id="4_u1h6m"]
+[ext_resource type="PackedScene" uid="uid://debgq70csi5ki" path="res://scenes/game_objects/walls/2x2_wall.tscn" id="5_1yh7e"]
+[ext_resource type="PackedScene" uid="uid://csuf1xqs6vjb" path="res://scenes/game_objects/walls/1x1_wall.tscn" id="6_5nfxl"]
+[ext_resource type="PackedScene" uid="uid://c1p4dep5mcuf" path="res://scenes/game_objects/walls/1x2_wall.tscn" id="7_mykav"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cmaj0"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -22,7 +23,7 @@ tonemap_mode = 2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0binv"]
 render_priority = 0
-shader = ExtResource("1_xwdok")
+shader = ExtResource("1_fssld")
 shader_parameter/base_color = Color(0.27509058, 0.27509058, 0.2750905, 1)
 shader_parameter/line_color = Color(0.1, 0.1, 0.1, 1)
 shader_parameter/splotch_color = Color(0.19315353, 0.19315356, 0.19315338, 1)
@@ -35,6 +36,7 @@ size = Vector3(100, 2, 100)
 size = Vector3(100, 2, 100)
 
 [node name="TestLevel" type="Node3D"]
+script = ExtResource("1_shv0j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -57,43 +59,40 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 shape = SubResource("BoxShape3D_xwdok")
 
-[node name="Box" parent="." instance=ExtResource("2_k1xfd")]
+[node name="Box" parent="." instance=ExtResource("2_yv0gm")]
 
-[node name="Box2" parent="." instance=ExtResource("2_k1xfd")]
+[node name="Box2" parent="." instance=ExtResource("2_yv0gm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
 
-[node name="Box3" parent="." instance=ExtResource("2_k1xfd")]
+[node name="Box3" parent="." instance=ExtResource("2_yv0gm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
-[node name="Box4" parent="." instance=ExtResource("2_k1xfd")]
+[node name="Box4" parent="." instance=ExtResource("2_yv0gm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
 
-[node name="Box5" parent="." instance=ExtResource("2_k1xfd")]
+[node name="Box5" parent="." instance=ExtResource("2_yv0gm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 
-[node name="Box6" parent="." instance=ExtResource("2_k1xfd")]
+[node name="Box6" parent="." instance=ExtResource("2_yv0gm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
 
-[node name="Player" parent="." instance=ExtResource("3_h06om")]
+[node name="Player" parent="." instance=ExtResource("3_66dlx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8766217, 0, -0.00689888)
 
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.82858837, 0.5598583, 0, -0.5598583, 0.82858837, 0.20847774, 3.589372, 3.925222)
-
-[node name="Loading Zone" parent="." instance=ExtResource("4_h06om")]
+[node name="Loading Zone" parent="." instance=ExtResource("4_u1h6m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
 
-[node name="2x2 Wall" parent="." instance=ExtResource("6_hydqh")]
+[node name="2x2 Wall" parent="." instance=ExtResource("5_1yh7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)
 
-[node name="2x2 Wall2" parent="." instance=ExtResource("6_hydqh")]
+[node name="2x2 Wall2" parent="." instance=ExtResource("5_1yh7e")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 0, 3)
 
-[node name="1x1 Wall" parent="." instance=ExtResource("6_tofql")]
+[node name="1x1 Wall" parent="." instance=ExtResource("6_5nfxl")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1, 1, 4)
 
-[node name="1x2 Wall" parent="." instance=ExtResource("7_shv0j")]
+[node name="1x2 Wall" parent="." instance=ExtResource("7_mykav")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 6)
 
-[node name="1x2 Wall2" parent="." instance=ExtResource("7_shv0j")]
+[node name="1x2 Wall2" parent="." instance=ExtResource("7_mykav")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1, 0, 7)
