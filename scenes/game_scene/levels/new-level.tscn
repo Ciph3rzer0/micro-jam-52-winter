@@ -8,14 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://csuf1xqs6vjb" path="res://scenes/game_objects/walls/1x1_wall.tscn" id="6_tofql"]
 [ext_resource type="PackedScene" uid="uid://c1p4dep5mcuf" path="res://scenes/game_objects/walls/1x2_wall.tscn" id="7_shv0j"]
 [ext_resource type="AudioStream" uid="uid://cm5kcljhtqpn7" path="res://assets/audio/music/bgm_hectic.mp3" id="8_kk847"]
-[ext_resource type="PackedScene" uid="uid://khef2315r50s" path="res://assets/models/environment/wall_shelf.glb" id="9_me6q8"]
-[ext_resource type="PackedScene" uid="uid://d1rrgirm3hmxv" path="res://assets/models/environment/wall_window.glb" id="10_7o4f6"]
 [ext_resource type="PackedScene" uid="uid://dki7yutmle1s3" path="res://assets/models/interactive/conveyer_corner.glb" id="11_70464"]
 [ext_resource type="PackedScene" uid="uid://cx0u2bsde5788" path="res://assets/models/interactive/conveyer_straight.glb" id="12_ydjv7"]
 [ext_resource type="PackedScene" uid="uid://bmxp6f20ov4fy" path="res://assets/models/interactive/lift.glb" id="13_8a0vx"]
 [ext_resource type="PackedScene" uid="uid://bgaxy61nv244g" path="res://assets/models/props/barrel.glb" id="14_mgckh"]
 [ext_resource type="PackedScene" uid="uid://qnlmd3lftggq" path="res://assets/models/props/crate.glb" id="15_ye76d"]
 [ext_resource type="PackedScene" uid="uid://2apyixnue46q" path="res://assets/models/props/table.glb" id="16_m43l0"]
+[ext_resource type="PackedScene" uid="uid://yew34yj1wrc7" path="res://scenes/game_objects/walls/4x4_wall_shelf.tscn" id="16_uorsw"]
+[ext_resource type="PackedScene" uid="uid://ct7qv3dfqyj2a" path="res://scenes/game_objects/walls/4x4_wall_window.tscn" id="17_neufh"]
 [ext_resource type="PackedScene" uid="uid://b7mgqpqde1m1o" path="res://assets/models/props/tree.glb" id="17_ox0mp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cmaj0"]
@@ -85,7 +85,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
 
 [node name="Player" parent="." instance=ExtResource("3_h06om")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8766217, 0, -0.00689888)
+transform = Transform3D(1.074578, 0, 0, 0, 1.074578, 0, 0, 0, 1.074578, -2.8766217, 0, -0.00689888)
 
 [node name="Camera3D2" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.82858837, 0.5598583, 0, -0.5598583, 0.82858837, 0.20847774, 3.589372, 3.925222)
@@ -116,12 +116,6 @@ volume_db = -10.0
 autoplay = true
 attenuation_filter_cutoff_hz = 20500.0
 
-[node name="wall_shelf" parent="." instance=ExtResource("9_me6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5725865, 1.1803406, 2.0989552)
-
-[node name="wall_window" parent="." instance=ExtResource("10_7o4f6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8942409, 1.1803406, -6.3100643)
-
 [node name="conveyer_straight" parent="." instance=ExtResource("12_ydjv7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.704899, 0.28524208, 3.492509)
 
@@ -142,3 +136,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.891949, 1.186298, 8.54814
 
 [node name="conveyer_corner" parent="." instance=ExtResource("11_70464")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.086432, 9.536743e-07, 5.711097)
+
+[node name="4x4_wall_shelf" parent="." instance=ExtResource("16_uorsw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2213545, 0.03975916, -5.2881403)
+
+[node name="4x4_wall_shelf2" parent="." instance=ExtResource("16_uorsw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7786455, 0.03975916, -5.2881403)
+
+[node name="4x4_wall_shelf3" parent="." instance=ExtResource("17_neufh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -5.38941)

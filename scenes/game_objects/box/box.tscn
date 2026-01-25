@@ -14,7 +14,7 @@ script = ExtResource("1_13hcd")
 metadata/_edit_group_ = true
 
 [node name="crate2" parent="." instance=ExtResource("2_lhwlv")]
-transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 3.172, 0.911, 0)
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, -0.028957367, 0.0019367933, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)

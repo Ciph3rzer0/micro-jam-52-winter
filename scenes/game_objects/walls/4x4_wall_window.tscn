@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct7qv3dfqyj2a"]
+
+[ext_resource type="PackedScene" uid="uid://yew34yj1wrc7" path="res://scenes/game_objects/walls/4x4_wall_shelf.tscn" id="1_ayqv6"]
+[ext_resource type="PackedScene" uid="uid://d1rrgirm3hmxv" path="res://assets/models/environment/wall_window.glb" id="2_jhqq7"]
+
+[node name="4x4_wall_shelf" instance=ExtResource("1_ayqv6")]
+
+[node name="wall_shelf" parent="." index="16"]
+visible = false
+
+[node name="wall_window" parent="." index="17" instance=ExtResource("2_jhqq7")]
+transform = Transform3D(1.1755494, 0, 0, 0, 1.4033535, 0, 0, 0, 1, -0.08304596, 0, 0.12751484)
