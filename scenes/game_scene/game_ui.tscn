@@ -69,9 +69,3 @@ script = ExtResource("11_ulq3g")
 
 [node name="GameTimer" type="Node" parent="."]
 script = ExtResource("12_gpor5")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "THIS IS THE GAME UI"

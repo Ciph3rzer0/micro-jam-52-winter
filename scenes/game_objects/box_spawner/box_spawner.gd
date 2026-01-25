@@ -14,7 +14,7 @@ func spawn() -> void:
 	
 	var box_instance: Node3D = scene_to_spawn.instantiate()
 	box_instance.position = spawn_position
-	get_tree().current_scene.add_child(box_instance)
+	owner.add_child(box_instance)
 
 
 func _on_timer_timeout() -> void:
