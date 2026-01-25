@@ -37,6 +37,8 @@ enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg")
 box=""
 player=""
 wall=""
+loading_zone=""
+ice_tile=""
 
 [gui]
 

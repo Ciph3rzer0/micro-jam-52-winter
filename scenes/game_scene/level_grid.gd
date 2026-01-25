@@ -12,10 +12,7 @@ func get_object_at_position(position: Vector3i) -> DiscretePosition:
 
 
 func add_object_to_grid(new_object: Node3D) -> void:
-	assert(objects.get(new_object) == null, "Node is already registered in the level grid.")
-	assert("discrete_position" in new_object, "Node does not have a DiscretePosition component.")
-	assert(new_object.discrete_position is DiscretePosition, "Node's discrete_position is not of type DiscretePosition.")
-
+	assert_object_is_discrete_position(new_object)
 	var position: Vector3i = new_object.discrete_position.current_position
 
 	assert(not cells.has(position), "Cell is already occupied.")
@@ -83,7 +80,23 @@ func try_move_object(moving_object: Node3D, relative_motion: Vector3i, move_inst
 
 	return true
 
+func assert_object_is_discrete_position(test_object: Node3D) -> void:
+	assert(objects.get(test_object) == null, "Node is already registered in the level grid.")
+	assert("discrete_position" in test_object, "Node does not have a DiscretePosition component.")
+	assert(test_object.discrete_position is DiscretePosition, "Node's discrete_position is not of type DiscretePosition.")
+
 func assert_grid_object_is_valid(test_object: Node3D) -> void:
 	assert(objects.has(test_object), "Node is not registered in the level grid.")
 	assert("discrete_position" in test_object, "Node does not have a DiscretePosition component.")
 	assert(test_object.discrete_position is DiscretePosition, "Node's discrete_position is not of type DiscretePosition.")
+
+
+
+var ice_tiles : Dictionary[Vector3i, DiscretePosition] = {}
+
+func add_ice_tile_to_grid(ice_tile: Node3D) -> void:
+	assert_object_is_discrete_position(ice_tile)
+	ice_tiles[ice_tile.discrete_position.current_position] = ice_tile.discrete_position
+
+func is_tile_ice(position: Vector3i) -> bool:
+	return ice_tiles.has(position)

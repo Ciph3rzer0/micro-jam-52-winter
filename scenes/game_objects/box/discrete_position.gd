@@ -12,7 +12,7 @@ var lerp_progress: float = 1.0
 
 var current_position: Vector3i = Vector3i.ZERO
 var target_position: Vector3i = Vector3i.ZERO
-
+var last_move_direction: Vector3i = Vector3i.ZERO
 
 func _init(_owner: Node3D) -> void:
 	self.owner = _owner
@@ -34,6 +34,7 @@ func move(direction: Vector3i) -> void:
 	move_started.emit(current_position, target_position)
 
 	target_position = current_position + direction
+	last_move_direction = direction
 	lerp_progress = 0.0
 
 
@@ -50,4 +51,8 @@ func tick(delta: float) -> void:
 		move_stopped.emit(current_position, target_position)
 
 		current_position = target_position
+		
+		if LevelGrid.is_tile_ice(target_position):
+			LevelGrid.try_move_object(owner, last_move_direction)
+	
 		owner.global_position = Vector3(current_position)

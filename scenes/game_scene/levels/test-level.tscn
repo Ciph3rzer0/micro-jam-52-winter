@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://df4bxhyn077o6"]
+[gd_scene load_steps=15 format=3 uid="uid://bh2jb25rafb6b"]
 
 [ext_resource type="Shader" uid="uid://c8ai7r3nu55c3" path="res://assets/shaders/concrete_floor.gdshader" id="1_xwdok"]
 [ext_resource type="PackedScene" uid="uid://c5q5fp0n2evh5" path="res://scenes/game_objects/box/box.tscn" id="2_k1xfd"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://debgq70csi5ki" path="res://scenes/game_objects/walls/2x2_wall.tscn" id="6_hydqh"]
 [ext_resource type="PackedScene" uid="uid://csuf1xqs6vjb" path="res://scenes/game_objects/walls/1x1_wall.tscn" id="6_tofql"]
 [ext_resource type="PackedScene" uid="uid://c1p4dep5mcuf" path="res://scenes/game_objects/walls/1x2_wall.tscn" id="7_shv0j"]
+[ext_resource type="PackedScene" uid="uid://ba7xl40hutxsb" path="res://scenes/game_objects/ice_tile/ice_tile.tscn" id="8_shv0j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cmaj0"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -97,3 +98,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 6)
 
 [node name="1x2 Wall2" parent="." instance=ExtResource("7_shv0j")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1, 0, 7)
+
+[node name="IceTile" parent="." instance=ExtResource("8_shv0j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 2)
+
+[node name="IceTile2" parent="." instance=ExtResource("8_shv0j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3)
+
+[node name="IceTile5" parent="." instance=ExtResource("8_shv0j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 2)
+
+[node name="IceTile6" parent="." instance=ExtResource("8_shv0j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3)
+
+[node name="IceTile7" parent="." instance=ExtResource("8_shv0j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 2)
+
+[node name="IceTile8" parent="." instance=ExtResource("8_shv0j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 3)
+
+[node name="IceTile9" parent="." instance=ExtResource("8_shv0j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 4)
+
+[node name="IceTile10" parent="." instance=ExtResource("8_shv0j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 5)
+
+[node name="IceTile3" parent="." instance=ExtResource("8_shv0j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6)
+
+[node name="IceTile4" parent="." instance=ExtResource("8_shv0j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 1)
