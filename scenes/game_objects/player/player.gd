@@ -119,7 +119,7 @@ func _update_animation_state() -> void:
 		_play_animation("shove")
 		return
 
-	if discrete_position.is_moving:
+	if discrete_position.is_moving or not move_queue.is_empty():
 		if is_pushing:
 			_play_animation("shove")
 		else:

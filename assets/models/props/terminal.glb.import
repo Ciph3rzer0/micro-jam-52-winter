@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dki7yutmle1s3"
-path="res://.godot/imported/conveyer_corner.glb-fb4c67dcef32d2b08af293a74f3fab3e.scn"
+uid="uid://hdec61123jq0"
+path="res://.godot/imported/terminal.glb-e1a1ce6d656475377ca6c6a5760d2868.scn"
 
 [deps]
 
-source_file="res://assets/models/interactive/conveyer_corner.glb"
-dest_files=["res://.godot/imported/conveyer_corner.glb-fb4c67dcef32d2b08af293a74f3fab3e.scn"]
+source_file="res://assets/models/props/terminal.glb"
+dest_files=["res://.godot/imported/terminal.glb-e1a1ce6d656475377ca6c6a5760d2868.scn"]
 
 [params]
 
