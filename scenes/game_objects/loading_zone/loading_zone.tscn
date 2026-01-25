@@ -1,15 +1,99 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfql0pxloe6dm"]
+[gd_scene load_steps=7 format=3 uid="uid://dfql0pxloe6dm"]
 
 [ext_resource type="Script" uid="uid://14b0ismtdrob" path="res://scenes/game_objects/loading_zone/loading_zone.gd" id="1_hx523"]
 [ext_resource type="PackedScene" uid="uid://yxh6nkn6md4o" path="res://scenes/game_objects/loading_zone/loading_slot.tscn" id="2_s2msx"]
 
-[node name="Loading Zone" type="Node3D" groups=["loading_zone"]]
+[sub_resource type="ViewportTexture" id="ViewportTexture_s2msx"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4k8i"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_s2msx")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_s2msx"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_a4k8i")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1vss0"]
+font_size = 32
+
+[node name="Loading Zone" type="Node3D" node_paths=PackedStringArray("clear_progress_bar") groups=["loading_zone"]]
 script = ExtResource("1_hx523")
+clear_progress_bar = NodePath("SubViewport/CanvasLayer/Control/MarginContainer/Control/ProgressBar")
 
-[node name="Loading Slot 1" parent="." instance=ExtResource("2_s2msx")]
+[node name="Loading Slots" type="Node3D" parent="."]
 
-[node name="Loading Slot 2" parent="." instance=ExtResource("2_s2msx")]
+[node name="Loading Slot 1" parent="Loading Slots" instance=ExtResource("2_s2msx")]
+
+[node name="Loading Slot 2" parent="Loading Slots" instance=ExtResource("2_s2msx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
-[node name="Loading Slot 3" parent="." instance=ExtResource("2_s2msx")]
+[node name="Loading Slot 3" parent="Loading Slots" instance=ExtResource("2_s2msx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="UnloadingBar" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9917493, 1.3501557, 0)
+mesh = SubResource("QuadMesh_s2msx")
+skeleton = NodePath("")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport"]
+
+[node name="Control" type="Control" parent="SubViewport/CanvasLayer"]
+clip_contents = true
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport/CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Control" type="Control" parent="SubViewport/CanvasLayer/Control/MarginContainer"]
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport/CanvasLayer/Control/MarginContainer/Control"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 480.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5707964
+value = 0.44
+
+[node name="Label" type="Label" parent="SubViewport/CanvasLayer/Control/MarginContainer"]
+layout_mode = 2
+text = "Delivery In Progress..."
+label_settings = SubResource("LabelSettings_1vss0")
+horizontal_alignment = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="SubViewport/CanvasLayer/Control/MarginContainer"]
+visible = false
+layout_mode = 2

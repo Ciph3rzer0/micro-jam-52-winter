@@ -31,6 +31,17 @@ func add_object_to_grid(new_object: Node3D) -> void:
 	cells[position] = new_object.discrete_position
 	objects[new_object] = new_object.discrete_position
 
+
+func remove_object_from_grid(removed_object: Node3D) -> void:
+	assert_grid_object_is_valid(removed_object)
+	assert(cells.has(removed_object.discrete_position.current_position), "Cell does not contain the object to be removed.")
+
+	var position: Vector3i = removed_object.discrete_position.current_position
+
+	cells.erase(position)
+	objects.erase(removed_object)
+
+
 # A player can push boxes.  So we move the box ahead one cell and the player takes up two cells temporarily.
 func try_move_player(moving_player: Node3D, relative_motion: Vector3i) -> bool:
 	assert_grid_object_is_valid(moving_player)

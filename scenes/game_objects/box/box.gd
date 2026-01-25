@@ -37,3 +37,7 @@ func _on_box_move_stopped(_previous_position: Vector3i, _current_position: Vecto
 func _on_move_started(_current: Vector3i, _target: Vector3i) -> void:
 	audio_player.stream = AUDIO_SLIDE
 	audio_player.play()
+
+func collect_box() -> void:
+	LevelGrid.remove_object_from_grid(self)
+	queue_free()
