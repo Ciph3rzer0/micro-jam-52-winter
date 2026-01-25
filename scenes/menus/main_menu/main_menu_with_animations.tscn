@@ -321,6 +321,7 @@ graph_offset = Vector2(-180.277, 49)
 script = ExtResource("2_ixa71")
 level_select_packed_scene = null
 confirm_new_game = true
+game_scene_path = "uid://clxs5gwisal5m"
 options_packed_scene = ExtResource("3_2k5l7")
 credits_packed_scene = ExtResource("4_vsp5b")
 
@@ -338,7 +339,7 @@ parameters/conditions/intro_done = false
 modulate = Color(1, 1, 1, 0)
 
 [node name="TitleLabel" parent="MenuContainer/TitleMargin/TitleContainer" index="0"]
-text = "Boxes for the Big Man"
+text = "Factory"
 
 [node name="SubTitleContainer" parent="MenuContainer/SubTitleMargin" index="0"]
 modulate = Color(1, 1, 1, 0)
@@ -374,9 +375,6 @@ text = "Level Select"
 [node name="VersionContainer" parent="VersionMargin" index="0"]
 modulate = Color(1, 1, 1, 0)
 
-[node name="VersionLabel" parent="VersionMargin/VersionContainer" index="0"]
-text = "v0.0.1"
-
 [node name="ElfPush" type="Sprite2D" parent="VersionMargin" index="1"]
 position = Vector2(158, 556)
 scale = Vector2(0.7222222, 0.7222222)
@@ -411,7 +409,7 @@ stream = ExtResource("6_ixa71")
 volume_db = -25.0
 autoplay = true
 
-[node name="ElfJump" type="Sprite2D" parent="." index="12"]
+[node name="ElfJump" type="Sprite2D" parent="." index="11"]
 position = Vector2(1071, 226.00002)
 scale = Vector2(0.45254636, 0.45254636)
 texture = ExtResource("8_6xh1d")

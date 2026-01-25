@@ -3,9 +3,10 @@ extends Node
 var cells : Dictionary[Vector3i, DiscretePosition] = {}
 var objects : Dictionary[Node3D, DiscretePosition] = {}
 
-func _ready() -> void:
-	pass
-
+func clear_grid() -> void:
+	cells.clear()
+	objects.clear()
+	ice_tiles.clear()
 
 func get_object_at_position(position: Vector3i) -> DiscretePosition:
 	return cells.get(position)
