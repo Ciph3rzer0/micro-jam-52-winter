@@ -35,6 +35,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
 [node name="UnloadingBar" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9917493, 1.3501557, 0)
+visible = false
 mesh = SubResource("QuadMesh_s2msx")
 skeleton = NodePath("")
 

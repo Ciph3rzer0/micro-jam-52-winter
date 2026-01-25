@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://8no8y1p4ahyh"]
+
+[ext_resource type="Script" uid="uid://bera3eo75lgw2" path="res://scenes/game_scene/levels/my_level_script.gd" id="1_dn6h0"]
+[ext_resource type="Texture2D" uid="uid://dpktvjd8678o4" path="res://addons/maaacks_game_template/assets/box_symbol.png" id="2_i64rg"]
+[ext_resource type="Shader" uid="uid://c8ai7r3nu55c3" path="res://assets/shaders/concrete_floor.gdshader" id="2_sjavj"]
+[ext_resource type="PackedScene" uid="uid://uojhyjljopka" path="res://scenes/game_objects/player/player.tscn" id="4_4yf8q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s37xw"]
+font_size = 64
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cmaj0"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_xwdok"]
+sky_material = SubResource("ProceduralSkyMaterial_cmaj0")
+
+[sub_resource type="Environment" id="Environment_0binv"]
+background_mode = 2
+sky = SubResource("Sky_xwdok")
+tonemap_mode = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0binv"]
+render_priority = 0
+shader = ExtResource("2_sjavj")
+shader_parameter/base_color = Color(0.27509058, 0.27509058, 0.2750905, 1)
+shader_parameter/line_color = Color(0.1, 0.1, 0.1, 1)
+shader_parameter/splotch_color = Color(0.19315353, 0.19315356, 0.19315338, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cmaj0"]
+material = SubResource("ShaderMaterial_0binv")
+size = Vector3(100, 2, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xwdok"]
+size = Vector3(100, 2, 100)
+
+[node name="BaseLevel" type="Node3D"]
+script = ExtResource("1_dn6h0")
+
+[node name="Score" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="Score"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Score/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -132.0
+offset_bottom = 132.0
+grow_horizontal = 0
+texture = ExtResource("2_i64rg")
+expand_mode = 1
+metadata/_edit_group_ = true
+
+[node name="Score" type="Label" parent="Score/Control/TextureRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_s37xw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(1, 0.9607843, 0.9019608, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0binv")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("BoxMesh_cmaj0")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("BoxShape3D_xwdok")
+
+[node name="Player" parent="." instance=ExtResource("4_4yf8q")]
