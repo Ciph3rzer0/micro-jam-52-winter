@@ -41,7 +41,6 @@ size = Vector3(100, 2, 100)
 
 [node name="TestLevel" type="Node3D"]
 script = ExtResource("1_cmrtd")
-blocks_to_win = 6
 
 [node name="Score" type="CanvasLayer" parent="."]
 
@@ -109,6 +108,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8766217, 0, 0.9931011)
 
 [node name="Loading Zone" parent="." instance=ExtResource("4_h06om")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
+
+[node name="Loading Zone2" parent="." instance=ExtResource("4_h06om")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 3)
 
 [node name="2x2 Wall" parent="." instance=ExtResource("6_hydqh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)

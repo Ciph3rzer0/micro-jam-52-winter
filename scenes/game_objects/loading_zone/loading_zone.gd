@@ -19,34 +19,37 @@ var loading_slots: Array[DiscretePosition] = []
 
 
 func _ready() -> void:
+	unloading_bar.visible = false
+	
 	for child in loading_slot_nodes.get_children():
 		(child.get_child(0) as MeshInstance3D).material_override = StandardMaterial3D.new()
 		loading_slots.append(DiscretePosition.new(child))
 
 
 func _process(delta: float) -> void:
-	if check_win_condition():
-		if clear_automatically:
-			clear_countdown -= delta
-			if clear_countdown <= 0.0:
-				clear_countdown = clear_delay
-				clear_loading_zone()
-	else:
-		clear_countdown = clear_delay
+	if owner.loading_zones_unload_blocks():
+		if check_all_filled():
+			if clear_automatically and owner.loading_zones_unload_blocks():
+				clear_countdown -= delta
+				if clear_countdown <= 0.0:
+					clear_countdown = clear_delay
+					clear_loading_zone()
+		else:
+			clear_countdown = clear_delay
 	
-	if fully_loaded:
-		var progress := clampf(clear_delay - clear_countdown, 0.0, clear_delay) / clear_delay
-		if clear_progress_bar != null:
-			clear_progress_bar.value = progress * 100.0
-		
-		for slot in loading_slots:
-			(slot.owner.get_child(0) as MeshInstance3D).material_override.albedo_color \
-			= COLOR_ACTIVE.lerp(COLOR_INACTIVE, (sin(Time.get_ticks_msec() / 100.0) * 0.5 + 0.5))
+		if fully_loaded:
+			var progress := clampf(clear_delay - clear_countdown, 0.0, clear_delay) / clear_delay
+			if clear_progress_bar != null:
+				clear_progress_bar.value = progress * 100.0
+			
+			for slot in loading_slots:
+				(slot.owner.get_child(0) as MeshInstance3D).material_override.albedo_color \
+				= COLOR_ACTIVE.lerp(COLOR_INACTIVE, (sin(Time.get_ticks_msec() / 100.0) * 0.5 + 0.5))
 	
-	unloading_bar.visible = fully_loaded
+		unloading_bar.visible = fully_loaded
 
 
-func check_win_condition() -> bool:
+func check_all_filled() -> bool:
 	var slots_filled := 0
 
 	for slot in loading_slots:

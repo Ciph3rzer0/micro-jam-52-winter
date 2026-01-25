@@ -17,6 +17,10 @@ signal level_changed(level_path : String)
 @export var blocks_to_win: int = 0
 var collected_blocks: int = 0
 
+func loading_zones_unload_blocks() -> bool:
+	return blocks_to_win > 0
+
+
 var level_state : LevelState
 
 
@@ -35,7 +39,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if blocks_to_win <= 0:
 		for loading_zone in loading_zones:
-			if not loading_zone.check_win_condition():
+			if not loading_zone.check_all_filled():
 				return
 	
 		process_mode = Node.PROCESS_MODE_DISABLED
