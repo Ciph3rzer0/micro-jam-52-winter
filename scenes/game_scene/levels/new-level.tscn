@@ -1,5 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://bkpmw34ubicpe"]
+[gd_scene load_steps=25 format=3 uid="uid://7kx021nthh3h"]
 
+[ext_resource type="Script" uid="uid://bera3eo75lgw2" path="res://scenes/game_scene/levels/my_level_script.gd" id="1_neufh"]
 [ext_resource type="Shader" uid="uid://c8ai7r3nu55c3" path="res://assets/shaders/concrete_floor.gdshader" id="1_xwdok"]
 [ext_resource type="PackedScene" uid="uid://c5q5fp0n2evh5" path="res://scenes/game_objects/box/box.tscn" id="2_k1xfd"]
 [ext_resource type="PackedScene" uid="uid://uojhyjljopka" path="res://scenes/game_objects/player/player.tscn" id="3_h06om"]
@@ -8,15 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://csuf1xqs6vjb" path="res://scenes/game_objects/walls/1x1_wall.tscn" id="6_tofql"]
 [ext_resource type="PackedScene" uid="uid://c1p4dep5mcuf" path="res://scenes/game_objects/walls/1x2_wall.tscn" id="7_shv0j"]
 [ext_resource type="AudioStream" uid="uid://cm5kcljhtqpn7" path="res://assets/audio/music/bgm_hectic.mp3" id="8_kk847"]
-[ext_resource type="PackedScene" uid="uid://s0xuhgccm00v" path="res://1x2_wall_tree.tscn" id="14_cdkk3"]
-[ext_resource type="PackedScene" uid="uid://t40hx7j2a846" path="res://1x2_wall_barrel.tscn" id="15_eo3v4"]
-[ext_resource type="PackedScene" uid="uid://18ticywb6r35" path="res://2x1_conveyor_corner.tscn" id="15_ppeud"]
-[ext_resource type="PackedScene" uid="uid://46gadtqugg8e" path="res://2x1_wall_conveyor_straight.tscn" id="15_uorsw"]
-[ext_resource type="PackedScene" uid="uid://h1ipkcebxsy0" path="res://4x_4_wall_shelf_overhangs.tscn" id="16_41jyu"]
-[ext_resource type="PackedScene" uid="uid://bssikn8dm0kcn" path="res://3x2_wall_table.tscn" id="16_neufh"]
-[ext_resource type="PackedScene" uid="uid://yew34yj1wrc7" path="res://scenes/game_objects/walls/4x4_wall_shelf.tscn" id="16_uorsw"]
+[ext_resource type="PackedScene" path="res://1x2_wall_tree.tscn" id="14_cdkk3"]
+[ext_resource type="PackedScene" path="res://1x2_wall_barrel.tscn" id="15_eo3v4"]
+[ext_resource type="PackedScene" path="res://2x1_conveyor_corner.tscn" id="15_ppeud"]
+[ext_resource type="PackedScene" path="res://2x1_wall_conveyor_straight.tscn" id="15_uorsw"]
+[ext_resource type="PackedScene" path="res://4x_4_wall_shelf_overhangs.tscn" id="16_41jyu"]
+[ext_resource type="PackedScene" path="res://3x2_wall_table.tscn" id="16_neufh"]
+[ext_resource type="PackedScene" path="res://scenes/game_objects/walls/4x4_wall_shelf.tscn" id="16_uorsw"]
 [ext_resource type="PackedScene" uid="uid://bhadqlrfg3bh2" path="res://scenes/game_objects/box_lift/box_lift.tscn" id="16_x75li"]
-[ext_resource type="PackedScene" uid="uid://ct7qv3dfqyj2a" path="res://scenes/game_objects/walls/4x4_wall_window.tscn" id="17_neufh"]
+[ext_resource type="PackedScene" path="res://scenes/game_objects/walls/4x4_wall_window.tscn" id="17_neufh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cmaj0"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -48,6 +49,7 @@ size = Vector3(100, 2, 100)
 size = Vector3(100, 2, 100)
 
 [node name="TestLevel" type="Node3D"]
+script = ExtResource("1_neufh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
