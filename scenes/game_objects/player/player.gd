@@ -12,11 +12,21 @@ var is_pushing: bool = false
 
 @onready var animation_player: AnimationPlayer = $character/AnimationPlayer
 @onready var visuals: Node3D = $character
+@onready var audio_steps: AudioStreamPlayer3D = $AudioStreamPlayer3D_Steps
+@onready var audio_sfx: AudioStreamPlayer3D = $AudioStreamPlayer3D_SFX
+
+const AUDIO_STEP_1 = preload("res://assets/audio/sfx/step_1.mp3")
+const AUDIO_STEP_2 = preload("res://assets/audio/sfx/step_2.mp3")
+const AUDIO_GRUNT = preload("res://assets/audio/sfx/grunt_1.mp3")
+const AUDIO_JINGLE_ACQUIRED = preload("res://assets/audio/sfx/jingle-acquired.mp3")
+
+var step_alternator: bool = false
 
 func _ready() -> void:
 	discrete_position = DiscretePosition.new(self)
 	discrete_position.move_speed = MAX_MOVE_SPEED
 	LevelGrid.add_object_to_grid(self)
+	discrete_position.move_started.connect(_on_move_started)
 
 func _process(delta: float) -> void:
 	var queued_move_up = move_queue.find(VEC_UP)
@@ -62,10 +72,22 @@ func _process(delta: float) -> void:
 	discrete_position.tick(delta)
 	_update_animation_state()
 
+func _on_move_started(_current: Vector3i, _target: Vector3i) -> void:
+	if step_alternator:
+		audio_steps.stream = AUDIO_STEP_1
+	else:
+		audio_steps.stream = AUDIO_STEP_2
+	audio_steps.play()
+	step_alternator = !step_alternator
+
 func set_push_speed(box: DiscretePosition) -> void:
 	is_pushing = true
 	discrete_position.move_speed = box.move_speed
 	box.move_stopped.connect(_on_box_move_stopped, CONNECT_ONE_SHOT)
+	
+	audio_sfx.stream = AUDIO_GRUNT
+	audio_sfx.volume_db = -20.0
+	audio_sfx.play()
 
 func _on_box_move_stopped(_previous_position: Vector3i, _current_position: Vector3i) -> void:
 	is_pushing = false
@@ -88,6 +110,9 @@ func _update_rotation(direction: Vector3i) -> void:
 func _update_animation_state() -> void:
 	if Input.is_key_pressed(KEY_1):
 		_play_animation("victory_001")
+		if audio_sfx.stream != AUDIO_JINGLE_ACQUIRED or not audio_sfx.playing:
+			audio_sfx.stream = AUDIO_JINGLE_ACQUIRED
+			audio_sfx.play()
 		return
 
 	if Input.is_key_pressed(KEY_2):
