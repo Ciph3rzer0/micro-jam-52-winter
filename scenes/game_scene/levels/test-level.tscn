@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bh2jb25rafb6b"]
+[gd_scene load_steps=17 format=3 uid="uid://df4bxhyn077o6"]
 
 [ext_resource type="Shader" uid="uid://c8ai7r3nu55c3" path="res://assets/shaders/concrete_floor.gdshader" id="1_xwdok"]
 [ext_resource type="PackedScene" uid="uid://c5q5fp0n2evh5" path="res://scenes/game_objects/box/box.tscn" id="2_k1xfd"]
