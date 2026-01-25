@@ -87,9 +87,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
 [node name="Player" parent="." instance=ExtResource("3_h06om")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8766217, 0, -0.00689888)
 
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.82858837, 0.5598583, 0, -0.5598583, 0.82858837, 0.20847774, 3.589372, 3.925222)
-
 [node name="Loading Zone" parent="." instance=ExtResource("4_h06om")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
 
