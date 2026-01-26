@@ -48,7 +48,7 @@ level_won_scene = ExtResource("8_rkfhe")
 
 [node name="SceneLister" type="Node" parent="LevelManager"]
 script = ExtResource("9_g2ndc")
-files = Array[String](["res://scenes/game_scene/levels/1_push_boxes.tscn", "res://scenes/game_scene/levels/2_push_boxes_fast.tscn", "res://scenes/game_scene/levels/3_mistakes_happen.tscn", "res://scenes/game_scene/levels/4_ice_will_brutalize_you.tscn", "res://scenes/game_scene/levels/5_ice_plus.tscn", "res://scenes/game_scene/levels/6_two_conveyers.tscn", "res://scenes/game_scene/levels/7_ice_river.tscn"])
+files = Array[String](["res://scenes/game_scene/levels/1_push_boxes.tscn", "res://scenes/game_scene/levels/2_push_boxes_fast.tscn", "res://scenes/game_scene/levels/3_mistakes_happen.tscn", "res://scenes/game_scene/levels/4_ice_will_brutalize_you.tscn", "res://scenes/game_scene/levels/5_ice_plus.tscn", "res://scenes/game_scene/levels/6_two_conveyers.tscn", "res://scenes/game_scene/levels/7_ice_river.tscn", "res://scenes/game_scene/levels/8_the_factory.tscn"])
 directory = "res://scenes/game_scene/levels"
 
 [node name="LevelLoadingScreen" parent="." instance=ExtResource("10_0v86b")]
