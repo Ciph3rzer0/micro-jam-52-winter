@@ -21,6 +21,30 @@ font_size = 64
 outline_size = 16
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_a4k8i"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../orb2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 1, 0.50361955, 0)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../orb3")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 2, 0.35017025, 0)
+
 [sub_resource type="Animation" id="Animation_s2msx"]
 resource_name = "orb-hover"
 length = 6.0
@@ -68,30 +92,6 @@ tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/keys = PackedFloat32Array(0, 1, 2, 0.35017025, 0, 1.8, 1, 2, 0.45656532, 0, 4.733333, 1, 2, 0.17814738, 0)
 
-[sub_resource type="Animation" id="Animation_a4k8i"]
-length = 0.001
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../orb2")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 1, 0.50361955, 0)
-tracks/2/type = "position_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../orb3")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 2, 0.35017025, 0)
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a4k8i"]
 _data = {
 &"RESET": SubResource("Animation_a4k8i"),
@@ -131,6 +131,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 [node name="DeliveryProgressWidget" type="MeshInstance3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9917493, 1.3501557, 0)
+visible = false
 mesh = SubResource("QuadMesh_s2msx")
 skeleton = NodePath("")
 

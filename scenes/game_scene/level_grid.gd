@@ -25,7 +25,7 @@ func can_add_object_to_grid(new_object: Node3D) -> bool:
 
 func add_object_to_grid(new_object: Node3D) -> void:
 	var cell_free = can_add_object_to_grid(new_object)
-	assert(cell_free, "Cell is already occupied.")
+	assert(cell_free, "Cell is already occupied " + str(new_object.discrete_position.current_position))
 
 	var position: Vector3i = new_object.discrete_position.current_position
 
