@@ -1,15 +1,14 @@
-[gd_scene load_steps=18 format=3 uid="uid://caljj3onlmwol"]
+[gd_scene load_steps=17 format=3 uid="uid://caljj3onlmwol"]
 
 [ext_resource type="PackedScene" uid="uid://8no8y1p4ahyh" path="res://scenes/game_scene/levels/base_level.tscn" id="1_sg33p"]
-[ext_resource type="PackedScene" uid="uid://cwd7rt7jwbm6l" path="res://2x1_wall_conveyor_straight.tscn" id="2_v1bo3"]
-[ext_resource type="PackedScene" path="res://scenes/game_objects/walls/4x4_wall_window.tscn" id="3_js7t4"]
+[ext_resource type="PackedScene" uid="uid://46gadtqugg8e" path="res://2x1_wall_conveyor_straight.tscn" id="2_v1bo3"]
+[ext_resource type="PackedScene" uid="uid://ct7qv3dfqyj2a" path="res://scenes/game_objects/walls/4x4_wall_window.tscn" id="3_js7t4"]
 [ext_resource type="PackedScene" path="res://scenes/game_objects/walls/4x4_wall_shelf.tscn" id="4_ayhm7"]
 [ext_resource type="PackedScene" path="res://4x_4_wall_shelf_overhangs.tscn" id="5_45ilc"]
 [ext_resource type="PackedScene" uid="uid://khef2315r50s" path="res://assets/models/environment/wall_shelf.glb" id="6_p05pe"]
 [ext_resource type="PackedScene" path="res://3x2_wall_table.tscn" id="7_ix82x"]
-[ext_resource type="PackedScene" path="res://1x2_wall_barrel.tscn" id="8_368ro"]
-[ext_resource type="PackedScene" path="res://1x2_wall_tree.tscn" id="9_cch12"]
-[ext_resource type="PackedScene" uid="uid://csuf1xqs6vjb" path="res://scenes/game_objects/walls/1x1_wall.tscn" id="10_yfa55"]
+[ext_resource type="PackedScene" uid="uid://t40hx7j2a846" path="res://1x2_wall_barrel.tscn" id="8_368ro"]
+[ext_resource type="PackedScene" uid="uid://s0xuhgccm00v" path="res://1x2_wall_tree.tscn" id="9_cch12"]
 [ext_resource type="PackedScene" uid="uid://ba7xl40hutxsb" path="res://scenes/game_objects/ice_tile/ice_tile.tscn" id="11_70f4h"]
 [ext_resource type="PackedScene" uid="uid://hag642xd317p" path="res://scenes/game_objects/box_spawner/BoxSpawner.tscn" id="12_otyon"]
 [ext_resource type="PackedScene" uid="uid://dfql0pxloe6dm" path="res://scenes/game_objects/loading_zone/loading_zone.tscn" id="13_i1bw4"]
@@ -180,43 +179,37 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.032248784, 5)
 [node name="tree4" parent="obstacles" index="21" instance=ExtResource("9_cch12")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.032248784, -3)
 
-[node name="floater6" parent="obstacles" index="22" instance=ExtResource("10_yfa55")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 1, 6)
-
-[node name="floater5" parent="obstacles" index="23" instance=ExtResource("10_yfa55")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4, 1, 6)
-
-[node name="IceTile3" parent="obstacles" index="24" instance=ExtResource("11_70f4h")]
+[node name="IceTile3" parent="obstacles" index="22" instance=ExtResource("11_70f4h")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, -0.0192675, 3)
 
-[node name="IceTile10" parent="obstacles" index="25" instance=ExtResource("11_70f4h")]
+[node name="IceTile10" parent="obstacles" index="23" instance=ExtResource("11_70f4h")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, -0.0192675, 3)
 
-[node name="IceTile11" parent="obstacles" index="26" instance=ExtResource("11_70f4h")]
+[node name="IceTile11" parent="obstacles" index="24" instance=ExtResource("11_70f4h")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1, -0.0192675, 3)
 
-[node name="IceTile12" parent="obstacles" index="27" instance=ExtResource("11_70f4h")]
+[node name="IceTile12" parent="obstacles" index="25" instance=ExtResource("11_70f4h")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2, -0.0192675, 3)
 
-[node name="IceTile13" parent="obstacles" index="28" instance=ExtResource("11_70f4h")]
+[node name="IceTile13" parent="obstacles" index="26" instance=ExtResource("11_70f4h")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.9999995, -0.0192675, -2.0000002)
 
-[node name="IceTile14" parent="obstacles" index="29" instance=ExtResource("11_70f4h")]
+[node name="IceTile14" parent="obstacles" index="27" instance=ExtResource("11_70f4h")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6, -0.0192675, -2.3841858e-07)
 
-[node name="IceTile15" parent="obstacles" index="30" instance=ExtResource("11_70f4h")]
+[node name="IceTile15" parent="obstacles" index="28" instance=ExtResource("11_70f4h")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6, -0.0192675, 2)
 
-[node name="IceTile16" parent="obstacles" index="31" instance=ExtResource("11_70f4h")]
+[node name="IceTile16" parent="obstacles" index="29" instance=ExtResource("11_70f4h")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.9999995, -0.0192675, -3.0000002)
 
-[node name="IceTile17" parent="obstacles" index="32" instance=ExtResource("11_70f4h")]
+[node name="IceTile17" parent="obstacles" index="30" instance=ExtResource("11_70f4h")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.9999995, -0.0192675, -1.0000002)
 
-[node name="IceTile18" parent="obstacles" index="33" instance=ExtResource("11_70f4h")]
+[node name="IceTile18" parent="obstacles" index="31" instance=ExtResource("11_70f4h")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6, -0.0192675, 1)
 
-[node name="IceTile9" parent="obstacles" index="34" instance=ExtResource("11_70f4h")]
+[node name="IceTile9" parent="obstacles" index="32" instance=ExtResource("11_70f4h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.0192675, 3)
 
 [node name="BoxSpawner" parent="." index="11" instance=ExtResource("12_otyon")]

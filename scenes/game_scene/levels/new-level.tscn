@@ -13,9 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://t40hx7j2a846" path="res://1x2_wall_barrel.tscn" id="15_eo3v4"]
 [ext_resource type="PackedScene" uid="uid://18ticywb6r35" path="res://2x1_conveyor_corner.tscn" id="15_ppeud"]
 [ext_resource type="PackedScene" uid="uid://46gadtqugg8e" path="res://2x1_wall_conveyor_straight.tscn" id="15_uorsw"]
-[ext_resource type="PackedScene" uid="uid://h1ipkcebxsy0" path="res://4x_4_wall_shelf_overhangs.tscn" id="16_41jyu"]
-[ext_resource type="PackedScene" uid="uid://bssikn8dm0kcn" path="res://3x2_wall_table.tscn" id="16_neufh"]
-[ext_resource type="PackedScene" uid="uid://yew34yj1wrc7" path="res://scenes/game_objects/walls/4x4_wall_shelf.tscn" id="16_uorsw"]
+[ext_resource type="PackedScene" path="res://4x_4_wall_shelf_overhangs.tscn" id="16_41jyu"]
+[ext_resource type="PackedScene" path="res://3x2_wall_table.tscn" id="16_neufh"]
+[ext_resource type="PackedScene" path="res://scenes/game_objects/walls/4x4_wall_shelf.tscn" id="16_uorsw"]
 [ext_resource type="PackedScene" uid="uid://bhadqlrfg3bh2" path="res://scenes/game_objects/box_lift/box_lift.tscn" id="16_x75li"]
 [ext_resource type="PackedScene" uid="uid://ct7qv3dfqyj2a" path="res://scenes/game_objects/walls/4x4_wall_window.tscn" id="17_neufh"]
 [ext_resource type="PackedScene" uid="uid://khef2315r50s" path="res://assets/models/environment/wall_shelf.glb" id="19_x75li"]
@@ -67,6 +67,7 @@ stream = ExtResource("8_kk847")
 attenuation_model = 3
 volume_db = -10.0
 autoplay = true
+bus = &"Music"
 attenuation_filter_cutoff_hz = 20500.0
 
 [node name="Player" parent="." instance=ExtResource("3_h06om")]
