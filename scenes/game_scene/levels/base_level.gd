@@ -43,6 +43,15 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	# CHEATS
+	if Input.is_key_pressed(Key.KEY_C):
+		if Input.is_key_pressed(Key.KEY_G):
+			process_mode = Node.PROCESS_MODE_DISABLED
+			level_won.emit()
+		if Input.is_key_pressed(Key.KEY_H):
+			process_mode = Node.PROCESS_MODE_DISABLED
+			level_lost.emit()
+
 	if time_limit_seconds > 0.0:
 		time_elapsed_seconds += _delta
 		if has_node("%TimeLeft"):
