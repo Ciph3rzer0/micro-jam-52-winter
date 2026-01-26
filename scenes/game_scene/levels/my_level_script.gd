@@ -17,6 +17,10 @@ signal level_changed(level_path : String)
 @export var blocks_to_win: int = 0
 var collected_blocks: int = 0
 
+@export var time_limit_seconds: float = 0.0
+var time_elapsed_seconds: float = 0.0
+
+
 func loading_zones_unload_blocks() -> bool:
 	return blocks_to_win > 0
 
@@ -37,6 +41,14 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	if time_limit_seconds > 0.0:
+		time_elapsed_seconds += _delta
+		if has_node("%TimeLeft"):
+			%TimeLeft.text = "%.2f" % max(time_limit_seconds - time_elapsed_seconds, 0)
+		if time_elapsed_seconds >= time_limit_seconds:
+			process_mode = Node.PROCESS_MODE_DISABLED
+			level_lost.emit()
+
 	if blocks_to_win <= 0:
 		for loading_zone in loading_zones:
 			if not loading_zone.check_all_filled():

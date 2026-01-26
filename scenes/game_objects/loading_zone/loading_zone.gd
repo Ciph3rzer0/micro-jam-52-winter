@@ -6,10 +6,6 @@ const COLOR_INACTIVE: Color = Color(1, 1, 1)  # White
 signal loading_complete()
 signal loading_incomplete()
 
-@onready var loading_slot_nodes := $"Loading Slots"
-@onready var unloading_bar = $"UnloadingBar"
-
-@export var clear_progress_bar: ProgressBar
 @export var clear_automatically: bool = true
 @export var clear_delay: float = 5.0
 
@@ -19,9 +15,9 @@ var loading_slots: Array[DiscretePosition] = []
 
 
 func _ready() -> void:
-	unloading_bar.visible = false
-	
-	for child in loading_slot_nodes.get_children():
+	%DeliveryProgressWidget.visible = false
+
+	for child in %LoadingSlots.get_children():
 		(child.get_child(0) as MeshInstance3D).material_override = StandardMaterial3D.new()
 		loading_slots.append(DiscretePosition.new(child))
 
@@ -39,14 +35,13 @@ func _process(delta: float) -> void:
 	
 		if fully_loaded:
 			var progress := clampf(clear_delay - clear_countdown, 0.0, clear_delay) / clear_delay
-			if clear_progress_bar != null:
-				clear_progress_bar.value = progress * 100.0
+			%DeliveryProgressBar.value = progress * 100.0
 			
 			for slot in loading_slots:
 				(slot.owner.get_child(0) as MeshInstance3D).material_override.albedo_color \
 				= COLOR_ACTIVE.lerp(COLOR_INACTIVE, (sin(Time.get_ticks_msec() / 100.0) * 0.5 + 0.5))
 	
-		unloading_bar.visible = fully_loaded
+		%DeliveryProgressWidget.visible = fully_loaded
 
 
 func check_all_filled() -> bool:
@@ -88,6 +83,7 @@ func clear_loading_zone() -> void:
 			owner.score_a_box()
 		else:
 			assert(false, "Expected a box at loading zone position: %s" % slot.current_position)
+	%DeliveryProgressWidget.visible = false
 
 
 func set_slot_filled_state(slot: MeshInstance3D, filled: bool) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://8no8y1p4ahyh"]
+[gd_scene load_steps=14 format=3 uid="uid://8no8y1p4ahyh"]
 
 [ext_resource type="Script" uid="uid://bera3eo75lgw2" path="res://scenes/game_scene/levels/my_level_script.gd" id="1_dn6h0"]
 [ext_resource type="Texture2D" uid="uid://dpktvjd8678o4" path="res://addons/maaacks_game_template/assets/box_symbol.png" id="2_i64rg"]
@@ -8,6 +8,16 @@
 [sub_resource type="LabelSettings" id="LabelSettings_s37xw"]
 font_size = 64
 outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i64rg"]
+font_size = 28
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o50pn"]
+font_size = 48
+outline_size = 12
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cmaj0"]
@@ -38,6 +48,8 @@ size = Vector3(100, 2, 100)
 
 [node name="BaseLevel" type="Node3D"]
 script = ExtResource("1_dn6h0")
+blocks_to_win = null
+time_limit_seconds = null
 
 [node name="Score" type="CanvasLayer" parent="."]
 
@@ -71,6 +83,39 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "0"
 label_settings = SubResource("LabelSettings_s37xw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Score/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -136.0
+offset_right = 136.0
+offset_bottom = 202.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Score/Control/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TimeLabel" type="Label" parent="Score/Control/Control/VBoxContainer"]
+layout_mode = 2
+text = "Time Left"
+label_settings = SubResource("LabelSettings_i64rg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeLeft" type="Label" parent="Score/Control/Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_o50pn")
 horizontal_alignment = 1
 vertical_alignment = 1
 
