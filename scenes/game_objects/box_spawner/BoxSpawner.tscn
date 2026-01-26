@@ -14,17 +14,19 @@ material = SubResource("StandardMaterial3D_xrecf")
 script = ExtResource("1_xrecf")
 scene_to_spawn = ExtResource("2_tygx4")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Visuals" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("BoxMesh_tygx4")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Visuals"]
 transform = Transform3D(0.25, 0, 0, 0, 10, 0, 0, 0, 0.25, 0, -5.5, 0)
 mesh = SubResource("BoxMesh_tygx4")
 skeleton = NodePath("../../..")
 
 [node name="Timer" type="Timer" parent="." groups=["timed_spawner"]]
+unique_name_in_owner = true
 process_callback = 0
 wait_time = 2.0
 autostart = true
