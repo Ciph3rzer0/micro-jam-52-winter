@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://7kx021nthh3h"]
 
-[ext_resource type="Script" uid="uid://bera3eo75lgw2" path="res://scenes/game_scene/levels/my_level_script.gd" id="1_neufh"]
+[ext_resource type="Script" uid="uid://bera3eo75lgw2" path="res://scenes/game_scene/levels/base_level.gd" id="1_neufh"]
 [ext_resource type="Shader" uid="uid://c8ai7r3nu55c3" path="res://assets/shaders/concrete_floor.gdshader" id="1_xwdok"]
 [ext_resource type="PackedScene" uid="uid://c5q5fp0n2evh5" path="res://scenes/game_objects/box/box.tscn" id="2_k1xfd"]
 [ext_resource type="PackedScene" uid="uid://uojhyjljopka" path="res://scenes/game_objects/player/player.tscn" id="3_h06om"]
