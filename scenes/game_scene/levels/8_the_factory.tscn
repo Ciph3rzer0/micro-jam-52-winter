@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://x6bbqx7pgmx0"]
+[gd_scene load_steps=36 format=3 uid="uid://x6bbqx7pgmx0"]
 
 [ext_resource type="Script" uid="uid://bera3eo75lgw2" path="res://scenes/game_scene/levels/base_level.gd" id="1_5ts60"]
 [ext_resource type="Texture2D" uid="uid://dpktvjd8678o4" path="res://addons/maaacks_game_template/assets/box_symbol.png" id="2_mfqcu"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://18ticywb6r35" path="res://2x1_conveyor_corner.tscn" id="13_mfqcu"]
 [ext_resource type="PackedScene" uid="uid://d1uvtgyu0h4vq" path="res://scenes/game_objects/conveyer/conveyer.tscn" id="15_3mlxp"]
 [ext_resource type="PackedScene" uid="uid://bgakh6516qudq" path="res://scenes/game_objects/terminal.tscn" id="22_batpd"]
+[ext_resource type="AudioStream" uid="uid://nhriencwmguk" path="res://assets/audio/music/lonelypuzzle.mp3" id="24_75k7w"]
 
 [sub_resource type="Gradient" id="Gradient_i64rg"]
 offsets = PackedFloat32Array(0.6015284, 1)
@@ -850,3 +851,11 @@ transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 3.00
 
 [node name="Loading Zone" parent="." instance=ExtResource("11_5ik2f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -3)
+
+[node name="Lonelypuzzle" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9810104, 0.48, 1.905469)
+stream = ExtResource("24_75k7w")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+attenuation_filter_cutoff_hz = 20500.0
