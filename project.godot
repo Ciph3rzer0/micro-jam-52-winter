@@ -13,6 +13,8 @@ config_version=5
 config/name="Factory"
 run/main_scene="uid://bk80fxrac0p3i"
 config/features=PackedStringArray("4.5")
+boot_splash/bg_color=Color(0.049937002, 0.39597377, 0.4707718, 1)
+boot_splash/image="uid://d22xrh0hp8aj6"
 config/icon="res://icon.png"
 
 [autoload]
@@ -27,6 +29,7 @@ LevelGrid="*res://scenes/game_scene/level_grid.gd"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 

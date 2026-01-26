@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfql0pxloe6dm"]
+[gd_scene load_steps=14 format=3 uid="uid://dfql0pxloe6dm"]
 
 [ext_resource type="Script" uid="uid://14b0ismtdrob" path="res://scenes/game_objects/loading_zone/loading_zone.gd" id="1_hx523"]
 [ext_resource type="PackedScene" uid="uid://yxh6nkn6md4o" path="res://scenes/game_objects/loading_zone/loading_slot.tscn" id="2_s2msx"]
@@ -20,6 +20,99 @@ material = SubResource("StandardMaterial3D_a4k8i")
 font_size = 64
 outline_size = 16
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_s2msx"]
+resource_name = "orb-hover"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.17957664, 0, 3, 1, 0, 0.42453712, 0, 6, 1, 0, 0.17957664, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../orb2")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 1, 0.43446815, 0, 3, 1, 1, 0.18066972, 0, 5.9666667, 1, 1, 0.43446815, 0)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../orb3")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 2, 0.35017025, 0, 1.8, 1, 2, 0.45656532, 0, 4.733333, 1, 2, 0.17814738, 0)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../arrow1")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0.17957664, 0, 3, 1, 0, 0.42453712, 0, 6, 1, 0, 0.17957664, 0)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../arrow2")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 1, 0.43446815, 0, 3.0000002, 1, 1, 0.18066972, 0, 5.966666, 1, 1, 0.43446815, 0)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../arrow3")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 2, 0.35017025, 0, 1.8, 1, 2, 0.45656532, 0, 4.733333, 1, 2, 0.17814738, 0)
+
+[sub_resource type="Animation" id="Animation_a4k8i"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../orb2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 1, 0.50361955, 0)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../orb3")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 2, 0.35017025, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a4k8i"]
+_data = {
+&"RESET": SubResource("Animation_a4k8i"),
+&"orb-hover": SubResource("Animation_s2msx")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1vss0"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.9131387, 0, 0.19669816, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_s2msx"]
+material = SubResource("StandardMaterial3D_1vss0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s2msx"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.9131387, 0, 0.19669816, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_a4k8i"]
+material = SubResource("StandardMaterial3D_s2msx")
 
 [node name="Loading Zone" type="Node3D" groups=["loading_zone"]]
 script = ExtResource("1_hx523")
@@ -100,3 +193,38 @@ In
 Progress"
 label_settings = SubResource("LabelSettings_1vss0")
 horizontal_alignment = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="SubViewport/CanvasLayer/Control/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../orb")
+libraries = {
+&"": SubResource("AnimationLibrary_a4k8i")
+}
+autoplay = "orb-hover"
+
+[node name="orb" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.16974996, 0, 0, 0, 0.16974996, 0, 0, 0, 0.16974996, 0, 0, 0)
+mesh = SubResource("SphereMesh_s2msx")
+
+[node name="orb2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.16974996, 0, 0, 0, 0.16974996, 0, 0, 0, 0.16974996, 1, 0.50361955, 0)
+mesh = SubResource("SphereMesh_s2msx")
+
+[node name="orb3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.16974996, 0, 0, 0, 0.16974996, 0, 0, 0, 0.16974996, 2, 0.35017025, 0)
+mesh = SubResource("SphereMesh_s2msx")
+
+[node name="arrow1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.34526935, -3.229662e-09, -5.529048e-10, -1.0671799e-08, -0.32837787, 7.450581e-09, 4.4204054e-09, -2.752102e-08, -0.06685139, 0, 0.30647653, 0)
+mesh = SubResource("PrismMesh_a4k8i")
+
+[node name="arrow2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.34526935, -3.229662e-09, -5.529048e-10, -1.0671799e-08, -0.32837787, 7.450581e-09, 4.4204054e-09, -2.752102e-08, -0.06685139, 1, 0.30508566, 0)
+mesh = SubResource("PrismMesh_a4k8i")
+
+[node name="arrow3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.34526935, -3.229662e-09, -5.529048e-10, -1.0671799e-08, -0.32837787, 7.450581e-09, 4.4204054e-09, -2.752102e-08, -0.06685139, 2, 0.17005901, 0)
+mesh = SubResource("PrismMesh_a4k8i")

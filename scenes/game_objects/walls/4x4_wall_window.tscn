@@ -31,3 +31,15 @@ transform = Transform3D(-0.40073338, 6.112416e-08, 0.00096403545, -3.5033253e-08
 transparency = 0.1
 cast_shadow = 0
 mesh = SubResource("QuadMesh_hjc3k")
+
+[node name="SnowPlane2" type="MeshInstance3D" parent="wall_window" index="2"]
+transform = Transform3D(-0.5114113, 0.1514793, 0.0012478937, -0.08682026, -0.89228463, 0, 0.00070513913, -0.00020886141, 0.9050502, 0.14939538, 2.34125, -4.159688)
+transparency = 0.1
+cast_shadow = 0
+mesh = SubResource("QuadMesh_hjc3k")
+
+[node name="SnowPlane3" type="MeshInstance3D" parent="wall_window" index="3"]
+transform = Transform3D(-0.5187285, 7.9122046e-08, 0.0012478937, -4.534873e-08, -0.9050513, 0, 0.00071522815, -1.090943e-10, 0.9050502, 0.193611, 2.7254024, -6.109005)
+transparency = 0.1
+cast_shadow = 0
+mesh = SubResource("QuadMesh_hjc3k")

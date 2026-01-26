@@ -23,9 +23,11 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	# CRASHES GAME ON LAUNCH, UNKNOWN BUG, TEMP REMOVAL
 	if owner.loading_zones_unload_blocks():
 		if check_all_filled():
-			if clear_automatically and owner.loading_zones_unload_blocks():
+			if clear_automatically:
+				print("clear_automatically == true")
 				clear_countdown -= delta
 				if clear_countdown <= 0.0:
 					clear_countdown = clear_delay

@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode unshaded, cull_disabled;
+render_mode unshaded, cull_back;
 
 // Parameters
 uniform vec3 snow_color : source_color = vec3(1.0, 1.0, 1.0);
@@ -66,5 +66,5 @@ void fragment() {
     ALBEDO = final_color;
     
     // Optional: make it translucent if needed, but for a window backdrop, opaque is usually fine.
-    // ALPHA = 1.0; 
+    ALPHA = 0.7; 
 }
