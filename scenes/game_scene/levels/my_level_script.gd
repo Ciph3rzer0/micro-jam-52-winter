@@ -34,6 +34,8 @@ func _init() -> void:
 
 func _ready() -> void:
 	level_state = GameState.get_level_state(scene_file_path)
+	%TimeUI.visible = time_limit_seconds > 0.0
+	%ScoreUI.visible = blocks_to_win > 0.0
 	# %ColorPickerButton.color = level_state.color
 	# %BackgroundColor.color = level_state.color
 	# if not level_state.tutorial_read:
