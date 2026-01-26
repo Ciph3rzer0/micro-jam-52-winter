@@ -1,7 +1,7 @@
 extends Node3D
 
-const COLOR_ACTIVE: Color = Color(0, 1, 0)  # Green
-const COLOR_INACTIVE: Color = Color(1, 1, 1)  # White
+const COLOR_ACTIVE: Color = Color(0, 1, 0) # Green
+const COLOR_INACTIVE: Color = Color(1, 1, 1) # White
 
 signal loading_complete()
 signal loading_incomplete()
@@ -12,6 +12,9 @@ signal loading_incomplete()
 var fully_loaded: bool = false
 var clear_countdown: float = clear_delay
 var loading_slots: Array[DiscretePosition] = []
+
+const AUDIO_JINGLE_ACQUIRED = preload("res://assets/audio/sfx/jingle-acquired.mp3")
+var audio_player: AudioStreamPlayer
 
 
 func _ready() -> void:
@@ -83,6 +86,19 @@ func clear_loading_zone() -> void:
 			print("Removing box at position: ", slot.current_position)
 			object.owner.collect_box()
 			owner.score_a_box()
+			
+			if audio_player == null:
+				audio_player = AudioStreamPlayer.new()
+				add_child(audio_player)
+				audio_player.stream = AUDIO_JINGLE_ACQUIRED
+				
+			if not audio_player.playing:
+				audio_player.play()
+				
+			var foreman = get_tree().get_first_node_in_group("foreman")
+			if foreman and foreman.has_method("play_victory_animation"):
+				foreman.play_victory_animation()
+
 		else:
 			assert(false, "Expected a box at loading zone position: %s" % slot.current_position)
 	%DeliveryProgressWidget.visible = false

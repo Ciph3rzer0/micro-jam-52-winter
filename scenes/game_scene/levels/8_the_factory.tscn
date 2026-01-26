@@ -678,6 +678,12 @@ transform = Transform3D(2.6084783, 0, 0, 0, 1.4199486, 0, 0, 0, 1.5415248, 12.38
 [node name="wall_shelf3" parent="Walls" instance=ExtResource("12_hbq7y")]
 transform = Transform3D(-1.1402021e-07, -1.4199486, 0, -1.1402021e-07, 0, 1.5415248, -2.6084783, 6.206792e-08, -6.738219e-08, 13.339182, 5.538596, -9.992353)
 
+[node name="wall_shelf5" parent="Walls" instance=ExtResource("12_hbq7y")]
+transform = Transform3D(-2.6084783, 1.2413585e-07, 0, 7.1054274e-15, 6.2067926e-08, 1.5415248, 2.2804042e-07, 1.4199486, -6.738219e-08, 3.3645773, 5.503504, -10.84978)
+
+[node name="wall_shelf6" parent="Walls" instance=ExtResource("12_hbq7y")]
+transform = Transform3D(-2.6084783, 1.2413585e-07, 0, 7.1054274e-15, 6.2067926e-08, 1.5415248, 2.2804042e-07, 1.4199486, -6.738219e-08, -4.4608574, 5.503504, -10.849779)
+
 [node name="wall_shelf4" parent="Walls" instance=ExtResource("12_hbq7y")]
 transform = Transform3D(-1.1402021e-07, 1.4199486, 0, 1.1402021e-07, 4.2351647e-22, 1.5415248, 2.6084783, 6.206793e-08, -6.738219e-08, -19.810066, 5.538596, -10.296536)
 
