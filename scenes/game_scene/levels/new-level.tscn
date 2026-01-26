@@ -11,8 +11,8 @@
 [ext_resource type="AudioStream" uid="uid://cm5kcljhtqpn7" path="res://assets/audio/music/bgm_hectic.mp3" id="8_kk847"]
 [ext_resource type="PackedScene" path="res://1x2_wall_tree.tscn" id="14_cdkk3"]
 [ext_resource type="PackedScene" path="res://1x2_wall_barrel.tscn" id="15_eo3v4"]
-[ext_resource type="PackedScene" path="res://2x1_conveyor_corner.tscn" id="15_ppeud"]
-[ext_resource type="PackedScene" path="res://2x1_wall_conveyor_straight.tscn" id="15_uorsw"]
+[ext_resource type="PackedScene" uid="uid://b4srbkqin313j" path="res://2x1_conveyor_corner.tscn" id="15_ppeud"]
+[ext_resource type="PackedScene" uid="uid://cwd7rt7jwbm6l" path="res://2x1_wall_conveyor_straight.tscn" id="15_uorsw"]
 [ext_resource type="PackedScene" path="res://4x_4_wall_shelf_overhangs.tscn" id="16_41jyu"]
 [ext_resource type="PackedScene" path="res://3x2_wall_table.tscn" id="16_neufh"]
 [ext_resource type="PackedScene" path="res://scenes/game_objects/walls/4x4_wall_shelf.tscn" id="16_uorsw"]
@@ -200,22 +200,25 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -13,
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -13, 0, 5)
 
 [node name="2x2 Wall12" parent="Walls" instance=ExtResource("15_uorsw")]
-transform = Transform3D(1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 1, -11, 0, -4)
+transform = Transform3D(-1, 0, 1.4702742e-07, 0, 1, 0, -1.4702742e-07, 0, -1, -10, 0, -4)
 
 [node name="2x2 Wall13" parent="Walls" instance=ExtResource("15_uorsw")]
-transform = Transform3D(1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 1, -9, 0, -4)
+transform = Transform3D(-1, 0, 1.4702742e-07, 0, 1, 0, -1.4702742e-07, 0, -1, -8, 0, -4)
 
 [node name="2x2 Wall14" parent="Walls" instance=ExtResource("15_uorsw")]
-transform = Transform3D(1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 1, -7, 0, -4)
+transform = Transform3D(-1, 0, 1.4702742e-07, 0, 1, 0, -1.4702742e-07, 0, -1, -2, 0, -3.9999998)
 
 [node name="2x2 Wall15" parent="Walls" instance=ExtResource("15_uorsw")]
-transform = Transform3D(1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 1, -5, 0, -4)
+transform = Transform3D(-1, 0, 1.4702742e-07, 0, 1, 0, -1.4702742e-07, 0, -1, -4, 0, -4)
 
 [node name="2x2 Wall16" parent="Walls" instance=ExtResource("15_uorsw")]
-transform = Transform3D(1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 1, -3, 0, -3.9999998)
+transform = Transform3D(-1, 0, 1.4702742e-07, 0, 1, 0, -1.4702742e-07, 0, -1, -6, 0, -4.0000005)
 
 [node name="BoxLift" parent="Walls" instance=ExtResource("16_x75li")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -11, 0, -2.9999993)
+
+[node name="BoxLift3" parent="Walls" instance=ExtResource("16_x75li")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2, 0, -2.9999993)
 
 [node name="BoxLift2" parent="Walls" instance=ExtResource("16_x75li")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -12, 0, 8.4638987e-07)
@@ -248,4 +251,4 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.159903, 0, 9.356361)
 
 [node name="2x2 Wall" parent="." instance=ExtResource("15_ppeud")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.105074, 0, -3.964499)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -4)

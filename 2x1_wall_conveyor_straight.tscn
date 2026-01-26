@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://46gadtqugg8e"]
+[gd_scene load_steps=4 format=3 uid="uid://cwd7rt7jwbm6l"]
 
 [ext_resource type="PackedScene" uid="uid://debgq70csi5ki" path="res://scenes/game_objects/walls/2x2_wall.tscn" id="1_atuao"]
 [ext_resource type="PackedScene" uid="uid://cx0u2bsde5788" path="res://assets/models/interactive/conveyer_straight.glb" id="2_e7xni"]
 [ext_resource type="PackedScene" uid="uid://d1uvtgyu0h4vq" path="res://scenes/game_objects/conveyer/conveyer.tscn" id="3_e7xni"]
 
-[node name="2x2 Wall" instance=ExtResource("1_atuao")]
+[node name="2x1 Wall Conveyor Straight" instance=ExtResource("1_atuao")]
 
 [node name="MeshInstance3D" parent="." index="0"]
 visible = false
@@ -30,7 +30,7 @@ visible = false
 transform = Transform3D(-4.371139e-08, 0, -1.2399061, 0, 0.67140377, 0, 1, 0, -5.4198015e-08, 0.09846127, 0, 0)
 
 [node name="Conveyer" parent="." index="9" instance=ExtResource("3_e7xni")]
-transform = Transform3D(-4.2154003e-08, 0, 1.0247134, 0, 1, 0, -0.96437114, 0, -4.4791644e-08, 0.0324952, 1, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1, 0)
 
 [node name="Conveyer2" parent="." index="10" instance=ExtResource("3_e7xni")]
-transform = Transform3D(-4.2154003e-08, 0, 1.0247134, 0, 1, 0, -0.96437114, 0, -4.4791644e-08, 1.0077817, 1, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, 1, 0)

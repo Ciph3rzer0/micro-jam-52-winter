@@ -9,4 +9,4 @@ shader_parameter/belt_color = Color(0.05, 0.05, 0.05, 1)
 shader_parameter/line_color = Color(0.4, 0.4, 0.4, 1)
 shader_parameter/speed = 0.50000002375
 shader_parameter/line_thickness = 0.02
-shader_parameter/chevron_frequency = 5.0
+shader_parameter/chevron_frequency = 2.0000000475
