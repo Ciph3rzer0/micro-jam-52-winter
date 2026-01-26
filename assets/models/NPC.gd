@@ -20,7 +20,7 @@ func _play_animation(anim_name: String) -> void:
 			animation_player.play("foreman-idle-2")
 		animation_player.play(anim_name)
 
-func make_noise() -> void:
-	audio_sfx.stream = AUDIO_JINGLE_ACQUIRED
-	audio_sfx.volume_db = -10.0
-	audio_sfx.play()
+#func make_noise() -> void:
+	#audio_sfx.stream = AUDIO_JINGLE_ACQUIRED
+	#audio_sfx.volume_db = -10.0
+	#audio_sfx.play()
