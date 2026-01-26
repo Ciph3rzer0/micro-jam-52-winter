@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5q5fp0n2evh5"]
+[gd_scene load_steps=8 format=3 uid="uid://c5q5fp0n2evh5"]
 
 [ext_resource type="Script" uid="uid://d04vjmfuiccdm" path="res://scenes/game_objects/box/box.gd" id="1_13hcd"]
 [ext_resource type="PackedScene" uid="uid://qnlmd3lftggq" path="res://assets/models/props/crate.glb" id="2_lhwlv"]
@@ -8,6 +8,17 @@ size = Vector3(0.8, 0.8, 0.8)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0binv"]
 size = Vector3(0.8, 0.8, 0.8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lhwlv"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.9131387, 0, 0.19669816, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_25vd7"]
+material = SubResource("StandardMaterial3D_lhwlv")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lh6wu"]
+material = SubResource("StandardMaterial3D_lhwlv")
 
 [node name="Box" type="CharacterBody3D" groups=["box"]]
 script = ExtResource("1_13hcd")
@@ -26,3 +37,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("BoxShape3D_0binv")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.39999998, 0, 0, 0, 1, 0, 0, 0, 0.037144713, 0, 0.8684305, 0)
+mesh = SubResource("PlaneMesh_25vd7")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.7484552e-08, 0, 0.03714471, 0, 0.99999994, 0, -0.39999995, 0, -1.6236469e-09, 0, 0.8684305, 0)
+mesh = SubResource("PlaneMesh_25vd7")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.14109139, 0.0019664448, -0.07152856, -0.09508497, 0.0029179004, -0.106137335, -3.961157e-11, 0.011061436, 0.040714, -0.003946767, 0.8800547, 0.0036674815)
+mesh = SubResource("CylinderMesh_lh6wu")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.909186e-09, -0.010310222, -0.063077725, -2.7848004e-09, 0.0042361, -0.1535246, 0.21354342, -5.870746e-10, -8.275679e-10, 0.00487395, 0.88329214, 8.915113e-10)
+mesh = SubResource("CylinderMesh_lh6wu")

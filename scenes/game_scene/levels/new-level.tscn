@@ -113,6 +113,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
 [node name="Loading Zone" parent="Box Interactables" instance=ExtResource("4_h06om")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
 
+[node name="BoxLift" parent="Box Interactables" instance=ExtResource("16_x75li")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -11, 0, -2.9999993)
+
+[node name="BoxLift2" parent="Box Interactables" instance=ExtResource("16_x75li")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -12, 0, 8.4638987e-07)
+
 [node name="Conveyer" type="Node" parent="."]
 
 [node name="2x2 Wall" parent="Conveyer" instance=ExtResource("15_ppeud")]
@@ -205,12 +211,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 6)
 
 [node name="2x2 Wall8" parent="Walls" instance=ExtResource("16_neufh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
-
-[node name="BoxLift" parent="Walls" instance=ExtResource("16_x75li")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -11, 0, -2.9999993)
-
-[node name="BoxLift2" parent="Walls" instance=ExtResource("16_x75li")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -12, 0, 8.4638987e-07)
 
 [node name="4x4_wall_shelf6" parent="Walls" instance=ExtResource("16_41jyu")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.159903, 0, -2.6436388)

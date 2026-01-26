@@ -1,18 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://18ticywb6r35"]
+[gd_scene load_steps=4 format=3 uid="uid://18ticywb6r35"]
 
-[ext_resource type="PackedScene" uid="uid://46gadtqugg8e" path="res://2x1_wall_conveyor_straight.tscn" id="1_wsrpi"]
+[ext_resource type="PackedScene" uid="uid://da6baplelwvuu" path="res://scenes/game_objects/walls/solid_cell.tscn" id="1_gtm48"]
 [ext_resource type="PackedScene" uid="uid://dki7yutmle1s3" path="res://assets/models/interactive/conveyer_corner.glb" id="2_gtm48"]
+[ext_resource type="PackedScene" uid="uid://d1uvtgyu0h4vq" path="res://scenes/game_objects/conveyer/conveyer.tscn" id="2_un4em"]
 
-[node name="2x2 Wall" instance=ExtResource("1_wsrpi")]
+[node name="conveyer-corner" type="Node3D"]
 
-[node name="conveyer_straight" parent="." index="8"]
-visible = false
+[node name="SolidCell" parent="." instance=ExtResource("1_gtm48")]
 
-[node name="conveyer_corner" parent="." index="9" instance=ExtResource("2_gtm48")]
-transform = Transform3D(-4.371139e-08, 0, 0.8825557, 0, 0.6764305, 0, -1, 0, -3.8577735e-08, 0.9548553, 0, -0.081851006)
+[node name="SolidCell2" parent="." instance=ExtResource("1_gtm48")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
-[node name="Conveyer" parent="." index="10"]
+[node name="Conveyer" parent="." instance=ExtResource("2_un4em")]
 transform = Transform3D(0.96437114, 0, 3.5527137e-15, 0, 1, 0, 0, 0, 1.0247134, 0.0324952, 1, 0)
 
-[node name="Conveyer2" parent="." index="11"]
+[node name="Conveyer2" parent="." instance=ExtResource("2_un4em")]
 transform = Transform3D(-4.2154003e-08, 0, -1.0247134, 0, 1, 0, 0.96437114, 0, -4.4791644e-08, 1.0077817, 1, 0)
+
+[node name="conveyer_corner" parent="." instance=ExtResource("2_gtm48")]
+transform = Transform3D(-4.371139e-08, 0, 0.8825557, 0, 0.6764305, 0, -1, 0, -3.8577735e-08, 0.9548553, 0, -0.081851006)

@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhadqlrfg3bh2"]
+[gd_scene load_steps=5 format=3 uid="uid://bhadqlrfg3bh2"]
 
 [ext_resource type="PackedScene" uid="uid://d1uvtgyu0h4vq" path="res://scenes/game_objects/conveyer/conveyer.tscn" id="1_27m5g"]
 [ext_resource type="PackedScene" uid="uid://bmxp6f20ov4fy" path="res://assets/models/interactive/lift.glb" id="2_68i2q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_68i2q"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0, 0.29378718, 0.09369179, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="PrismMesh" id="PrismMesh_68i2q"]
+material = SubResource("StandardMaterial3D_68i2q")
 
 [node name="BoxLift" type="Node3D"]
 
@@ -15,3 +24,7 @@ visible = false
 
 [node name="lift" parent="." instance=ExtResource("2_68i2q")]
 transform = Transform3D(0.56661594, 0, 0, 0, 0.56661594, 0, 0, 0, 0.56661594, 0, 0.40358, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.34526935, -5.2460685e-09, -5.5290483e-10, 9.164083e-09, 0.2666986, -0.05789501, 7.0318475e-09, 0.46193558, 0.033425696, 0, 0.583697, 0)
+mesh = SubResource("PrismMesh_68i2q")
