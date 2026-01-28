@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://t40hx7j2a846"]
+[gd_scene format=3 uid="uid://t40hx7j2a846"]
 
 [ext_resource type="PackedScene" uid="uid://da6baplelwvuu" path="res://scenes/game_objects/walls/solid_cell.tscn" id="1_jp1cp"]
 [ext_resource type="PackedScene" uid="uid://bgaxy61nv244g" path="res://assets/models/props/barrel.glb" id="2_e5fbk"]
 
-[node name="barrel" type="Node3D"]
+[node name="barrel" type="Node3D" unique_id=1248228343]
 
-[node name="SolidCell" parent="." instance=ExtResource("1_jp1cp")]
+[node name="SolidCell" parent="." unique_id=682319428 instance=ExtResource("1_jp1cp")]
 transform = Transform3D(0.9354248, 0, 0, 0, 0.9354248, 0, 0, 0, 0.9354248, 0, 0.032287598, 0)
 
-[node name="SolidCell4" parent="." instance=ExtResource("1_jp1cp")]
+[node name="SolidCell4" parent="." unique_id=1429532732 instance=ExtResource("1_jp1cp")]
 transform = Transform3D(0.9354248, 0, 0, 0, 0.9354248, 0, 0, 0, 0.9354248, 0, 0.9677124, 0)
 
-[node name="barrel2" parent="." instance=ExtResource("2_e5fbk")]
+[node name="barrel2" parent="." unique_id=1655237321 instance=ExtResource("2_e5fbk")]
 transform = Transform3D(0.6981568, 0, 0, 0, 0.6981568, 0, 0, 0, 0.6981568, 0.00012087822, 0, 0.005245343)

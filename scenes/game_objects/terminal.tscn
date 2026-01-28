@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgakh6516qudq"]
+[gd_scene format=3 uid="uid://bgakh6516qudq"]
 
 [ext_resource type="PackedScene" uid="uid://da6baplelwvuu" path="res://scenes/game_objects/walls/solid_cell.tscn" id="1_yfg02"]
 [ext_resource type="PackedScene" uid="uid://hdec61123jq0" path="res://assets/models/props/terminal.glb" id="2_pxxw3"]
@@ -12,18 +12,18 @@ emission_energy_multiplier = 2.0
 [sub_resource type="CylinderMesh" id="CylinderMesh_yfg02"]
 material = SubResource("StandardMaterial3D_yfg02")
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" unique_id=1220851785]
 
-[node name="SolidCell" parent="." instance=ExtResource("1_yfg02")]
+[node name="SolidCell" parent="." unique_id=1109606281 instance=ExtResource("1_yfg02")]
 transform = Transform3D(0.9354248, 0, 0, 0, 0.9354248, 0, 0, 0, 0.9354248, 0, 0.032287598, 0)
 
-[node name="SolidCell4" parent="." instance=ExtResource("1_yfg02")]
+[node name="SolidCell4" parent="." unique_id=600224759 instance=ExtResource("1_yfg02")]
 transform = Transform3D(0.9354248, 0, 0, 0, 0.9353631, 0.0107424315, 0, -0.0107424315, 0.9353631, 0, 0.9677124, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=775363040]
 transform = Transform3D(0.43393415, 0, 0.003631101, -0.0013229738, 0.05910376, 0.16038993, -0.0033535855, -0.023316154, 0.40656996, 0.011925511, 1.2438587, -0.1911646)
 mesh = SubResource("CylinderMesh_yfg02")
 skeleton = NodePath("../terminal")
 
-[node name="terminal" parent="." instance=ExtResource("2_pxxw3")]
+[node name="terminal" parent="." unique_id=1596092841 instance=ExtResource("2_pxxw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011620581, -1.1920929e-07, -0.8160273)

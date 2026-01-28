@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dfql0pxloe6dm"]
+[gd_scene format=3 uid="uid://dfql0pxloe6dm"]
 
 [ext_resource type="Script" uid="uid://14b0ismtdrob" path="res://scenes/game_objects/loading_zone/loading_zone.gd" id="1_hx523"]
 [ext_resource type="PackedScene" uid="uid://yxh6nkn6md4o" path="res://scenes/game_objects/loading_zone/loading_slot.tscn" id="2_s2msx"]
@@ -114,32 +114,31 @@ emission = Color(0.9131387, 0, 0.19669816, 1)
 [sub_resource type="PrismMesh" id="PrismMesh_a4k8i"]
 material = SubResource("StandardMaterial3D_s2msx")
 
-[node name="Loading Zone" type="Node3D" groups=["loading_zone"]]
+[node name="Loading Zone" type="Node3D" unique_id=304213250 groups=["loading_zone"]]
 script = ExtResource("1_hx523")
 
-[node name="LoadingSlots" type="Node3D" parent="."]
+[node name="LoadingSlots" type="Node3D" parent="." unique_id=1339520182]
 unique_name_in_owner = true
 
-[node name="Loading Slot 1" parent="LoadingSlots" instance=ExtResource("2_s2msx")]
+[node name="Loading Slot 1" parent="LoadingSlots" unique_id=660180701 instance=ExtResource("2_s2msx")]
 
-[node name="Loading Slot 2" parent="LoadingSlots" instance=ExtResource("2_s2msx")]
+[node name="Loading Slot 2" parent="LoadingSlots" unique_id=1820660492 instance=ExtResource("2_s2msx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
-[node name="Loading Slot 3" parent="LoadingSlots" instance=ExtResource("2_s2msx")]
+[node name="Loading Slot 3" parent="LoadingSlots" unique_id=32945562 instance=ExtResource("2_s2msx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
-[node name="DeliveryProgressWidget" type="MeshInstance3D" parent="."]
+[node name="DeliveryProgressWidget" type="MeshInstance3D" parent="." unique_id=1845219665]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9917493, 1.3501557, 0)
 visible = false
 mesh = SubResource("QuadMesh_s2msx")
-skeleton = NodePath("")
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="." unique_id=2063743728]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport"]
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport" unique_id=1061355595]
 
-[node name="Control" type="Control" parent="SubViewport/CanvasLayer"]
+[node name="Control" type="Control" parent="SubViewport/CanvasLayer" unique_id=567405606]
 clip_contents = true
 custom_minimum_size = Vector2(512, 512)
 layout_mode = 3
@@ -157,7 +156,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="SubViewport/CanvasLayer/Control"]
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport/CanvasLayer/Control" unique_id=1080483970]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -169,10 +168,10 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Control" type="Control" parent="SubViewport/CanvasLayer/Control/MarginContainer"]
+[node name="Control" type="Control" parent="SubViewport/CanvasLayer/Control/MarginContainer" unique_id=1974512922]
 layout_mode = 2
 
-[node name="DeliveryProgressBar" type="ProgressBar" parent="SubViewport/CanvasLayer/Control/MarginContainer/Control"]
+[node name="DeliveryProgressBar" type="ProgressBar" parent="SubViewport/CanvasLayer/Control/MarginContainer/Control" unique_id=533306116]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 1
@@ -187,7 +186,7 @@ rotation = -1.5707964
 value = 10.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="SubViewport/CanvasLayer/Control/MarginContainer"]
+[node name="Label" type="Label" parent="SubViewport/CanvasLayer/Control/MarginContainer" unique_id=922701182]
 layout_mode = 2
 text = "Delivery
 In
@@ -195,37 +194,35 @@ Progress"
 label_settings = SubResource("LabelSettings_1vss0")
 horizontal_alignment = 1
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="SubViewport/CanvasLayer/Control/MarginContainer"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="SubViewport/CanvasLayer/Control/MarginContainer" unique_id=1945078172]
 visible = false
 layout_mode = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1095928555]
 root_node = NodePath("../orb")
-libraries = {
-&"": SubResource("AnimationLibrary_a4k8i")
-}
-autoplay = "orb-hover"
+libraries/ = SubResource("AnimationLibrary_a4k8i")
+autoplay = &"orb-hover"
 
-[node name="orb" type="MeshInstance3D" parent="."]
+[node name="orb" type="MeshInstance3D" parent="." unique_id=801199044]
 transform = Transform3D(0.16974996, 0, 0, 0, 0.16974996, 0, 0, 0, 0.16974996, 0, 0, 0)
 mesh = SubResource("SphereMesh_s2msx")
 
-[node name="orb2" type="MeshInstance3D" parent="."]
+[node name="orb2" type="MeshInstance3D" parent="." unique_id=1110851797]
 transform = Transform3D(0.16974996, 0, 0, 0, 0.16974996, 0, 0, 0, 0.16974996, 1, 0.50361955, 0)
 mesh = SubResource("SphereMesh_s2msx")
 
-[node name="orb3" type="MeshInstance3D" parent="."]
+[node name="orb3" type="MeshInstance3D" parent="." unique_id=1447691703]
 transform = Transform3D(0.16974996, 0, 0, 0, 0.16974996, 0, 0, 0, 0.16974996, 2, 0.35017025, 0)
 mesh = SubResource("SphereMesh_s2msx")
 
-[node name="arrow1" type="MeshInstance3D" parent="."]
+[node name="arrow1" type="MeshInstance3D" parent="." unique_id=1465373578]
 transform = Transform3D(0.34526935, -3.229662e-09, -5.529048e-10, -1.0671799e-08, -0.32837787, 7.450581e-09, 4.4204054e-09, -2.752102e-08, -0.06685139, 0, 0.30647653, 0)
 mesh = SubResource("PrismMesh_a4k8i")
 
-[node name="arrow2" type="MeshInstance3D" parent="."]
+[node name="arrow2" type="MeshInstance3D" parent="." unique_id=1167772649]
 transform = Transform3D(0.34526935, -3.229662e-09, -5.529048e-10, -1.0671799e-08, -0.32837787, 7.450581e-09, 4.4204054e-09, -2.752102e-08, -0.06685139, 1, 0.30508566, 0)
 mesh = SubResource("PrismMesh_a4k8i")
 
-[node name="arrow3" type="MeshInstance3D" parent="."]
+[node name="arrow3" type="MeshInstance3D" parent="." unique_id=794692185]
 transform = Transform3D(0.34526935, -3.229662e-09, -5.529048e-10, -1.0671799e-08, -0.32837787, 7.450581e-09, 4.4204054e-09, -2.752102e-08, -0.06685139, 2, 0.17005901, 0)
 mesh = SubResource("PrismMesh_a4k8i")

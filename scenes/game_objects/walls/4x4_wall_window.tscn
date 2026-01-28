@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ct7qv3dfqyj2a"]
+[gd_scene format=3 uid="uid://ct7qv3dfqyj2a"]
 
 [ext_resource type="PackedScene" uid="uid://yew34yj1wrc7" path="res://scenes/game_objects/walls/4x4_wall_shelf.tscn" id="1_ayqv6"]
 [ext_resource type="PackedScene" uid="uid://d1rrgirm3hmxv" path="res://assets/models/environment/wall_window.glb" id="2_jhqq7"]
@@ -18,27 +18,27 @@ shader_parameter/haze_density = 0.5
 material = SubResource("ShaderMaterial_snow")
 size = Vector2(20, 10)
 
-[node name="4x4_wall_shelf" instance=ExtResource("1_ayqv6")]
+[node name="4x4_wall_shelf" unique_id=871966621 instance=ExtResource("1_ayqv6")]
 
-[node name="wall_shelf" parent="." index="16"]
+[node name="wall_shelf" parent="." index="16" unique_id=1129527086]
 visible = false
 
-[node name="wall_window" parent="." index="17" instance=ExtResource("2_jhqq7")]
+[node name="wall_window" parent="." index="17" unique_id=1552812439 instance=ExtResource("2_jhqq7")]
 transform = Transform3D(1.2066915, 0, 0, 0, 1.4033535, 0, 0, 0, 1, -0.07189083, 0.052748926, 0.8980434)
 
-[node name="SnowPlane" type="MeshInstance3D" parent="wall_window" index="1"]
+[node name="SnowPlane" type="MeshInstance3D" parent="wall_window" index="1" unique_id=1790953324]
 transform = Transform3D(-0.40073338, 6.112416e-08, 0.00096403545, -3.5033253e-08, -0.6991793, 0, 0.0005525353, -8.427864e-11, 0.6991786, 0.21294257, 2.3159435, -2.2410426)
 transparency = 0.1
 cast_shadow = 0
 mesh = SubResource("QuadMesh_hjc3k")
 
-[node name="SnowPlane2" type="MeshInstance3D" parent="wall_window" index="2"]
+[node name="SnowPlane2" type="MeshInstance3D" parent="wall_window" index="2" unique_id=1880664348]
 transform = Transform3D(-0.5114113, 0.1514793, 0.0012478937, -0.08682026, -0.89228463, 0, 0.00070513913, -0.00020886141, 0.9050502, 0.14939538, 2.34125, -4.159688)
 transparency = 0.1
 cast_shadow = 0
 mesh = SubResource("QuadMesh_hjc3k")
 
-[node name="SnowPlane3" type="MeshInstance3D" parent="wall_window" index="3"]
+[node name="SnowPlane3" type="MeshInstance3D" parent="wall_window" index="3" unique_id=719306683]
 transform = Transform3D(-0.5187285, 7.9122046e-08, 0.0012478937, -4.534873e-08, -0.9050513, 0, 0.00071522815, -1.090943e-10, 0.9050502, 0.193611, 2.7254024, -6.109005)
 transparency = 0.1
 cast_shadow = 0

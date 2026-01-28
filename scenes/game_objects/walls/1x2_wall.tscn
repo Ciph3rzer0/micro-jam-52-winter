@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1p4dep5mcuf"]
+[gd_scene format=3 uid="uid://c1p4dep5mcuf"]
 
 [ext_resource type="PackedScene" uid="uid://da6baplelwvuu" path="res://scenes/game_objects/walls/solid_cell.tscn" id="1_j7ex4"]
 [ext_resource type="Material" uid="uid://8u78axk6oy0t" path="res://scenes/game_objects/walls/wall_material.tres" id="1_ly8pl"]
@@ -6,17 +6,17 @@
 [sub_resource type="BoxMesh" id="BoxMesh_rqlbp"]
 material = ExtResource("1_ly8pl")
 
-[node name="1x2 Wall" type="Node3D"]
+[node name="1x2 Wall" type="Node3D" unique_id=894009643]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1100628269]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.655, 0, 0.5, 0)
 mesh = SubResource("BoxMesh_rqlbp")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=922640541]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.655, 0, 1.5, 0)
 mesh = SubResource("BoxMesh_rqlbp")
 
-[node name="SolidCell" parent="." instance=ExtResource("1_j7ex4")]
+[node name="SolidCell" parent="." unique_id=1399326222 instance=ExtResource("1_j7ex4")]
 
-[node name="SolidCell2" parent="." instance=ExtResource("1_j7ex4")]
+[node name="SolidCell2" parent="." unique_id=1192076761 instance=ExtResource("1_j7ex4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

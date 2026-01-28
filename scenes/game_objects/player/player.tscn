@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://uojhyjljopka"]
+[gd_scene format=3 uid="uid://uojhyjljopka"]
 
 [ext_resource type="Script" uid="uid://bt30hmwshxact" path="res://scenes/game_objects/player/player.gd" id="1_7uu8a"]
 [ext_resource type="PackedScene" uid="uid://drb8j1r4k28vl" path="res://assets/models/character_2.tscn" id="2_tuuoe"]
@@ -13,30 +13,30 @@ height = 1.6
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7uu8a"]
 
-[node name="Player" type="CharacterBody3D" groups=["player"]]
+[node name="Player" type="CharacterBody3D" unique_id=1422246086 groups=["player"]]
 script = ExtResource("1_7uu8a")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=639231611]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88, 0)
 visible = false
 mesh = SubResource("CapsuleMesh_xwdok")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=291598995]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88, 0)
 shape = SubResource("CapsuleShape3D_0binv")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=31240956]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=561115140]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_7uu8a")
 
-[node name="character" parent="." instance=ExtResource("2_tuuoe")]
+[node name="character" parent="." unique_id=139438639 instance=ExtResource("2_tuuoe")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="AudioStreamPlayer3D_Steps" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D_Steps" type="AudioStreamPlayer3D" parent="." unique_id=1245517596]
 
-[node name="AudioStreamPlayer3D_SFX" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D_SFX" type="AudioStreamPlayer3D" parent="." unique_id=1566496199]
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1984131045]
 transform = Transform3D(1, 0, 0, 0, 0.59173185, 0.8061349, 0, -0.8061349, 0.59173185, 0, 7.112173, 3.8539562)

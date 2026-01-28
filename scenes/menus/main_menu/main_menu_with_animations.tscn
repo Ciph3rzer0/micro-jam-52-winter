@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dhr7kwfkmlq7o"]
+[gd_scene format=3 uid="uid://dhr7kwfkmlq7o"]
 
 [ext_resource type="PackedScene" uid="uid://c6k5nnpbypshi" path="res://addons/maaacks_game_template/base/nodes/menus/main_menu/main_menu.tscn" id="1_sr523"]
 [ext_resource type="Script" uid="uid://6kkgt00vvrar" path="res://scenes/menus/main_menu/main_menu_with_animations.gd" id="2_ixa71"]
@@ -318,7 +318,7 @@ states/Start/position = Vector2(82, 123)
 transitions = ["Intro", "OpenMainMenu", SubResource("11"), "OpenMainMenu", "OpenSubMenu", SubResource("14"), "Start", "Intro", SubResource("AnimationNodeStateMachineTransition_j0orr"), "OpenSubMenu", "OpenMainMenu", SubResource("AnimationNodeStateMachineTransition_63dxc")]
 graph_offset = Vector2(-180.277, 49)
 
-[node name="MainMenu" instance=ExtResource("1_sr523")]
+[node name="MainMenu" unique_id=2045925920 instance=ExtResource("1_sr523")]
 script = ExtResource("2_ixa71")
 level_select_packed_scene = ExtResource("3_6xh1d")
 confirm_new_game = true
@@ -326,26 +326,21 @@ game_scene_path = "uid://clxs5gwisal5m"
 options_packed_scene = ExtResource("3_2k5l7")
 credits_packed_scene = ExtResource("4_vsp5b")
 
-[node name="MenuAnimationPlayer" type="AnimationPlayer" parent="." index="1"]
-libraries = {
-&"": SubResource("AnimationLibrary_2kqig")
-}
+[node name="MenuAnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=297611712]
+libraries/ = SubResource("AnimationLibrary_2kqig")
 
-[node name="MenuAnimationTree" type="AnimationTree" parent="." index="2"]
+[node name="MenuAnimationTree" type="AnimationTree" parent="." index="2" unique_id=326253174]
 tree_root = SubResource("AnimationNodeStateMachine_vikuh")
 anim_player = NodePath("../MenuAnimationPlayer")
 parameters/conditions/intro_done = false
 
-[node name="TitleContainer" parent="MenuContainer/TitleMargin" index="0"]
+[node name="TitleContainer" parent="MenuContainer/TitleMargin" parent_id_path=PackedInt32Array(542724731) index="0" unique_id=1197108503]
 modulate = Color(1, 1, 1, 0)
 
-[node name="TitleLabel" parent="MenuContainer/TitleMargin/TitleContainer" index="0"]
-text = "Boxes For The Big Man"
-
-[node name="SubTitleContainer" parent="MenuContainer/SubTitleMargin" index="0"]
+[node name="SubTitleContainer" parent="MenuContainer/SubTitleMargin" parent_id_path=PackedInt32Array(1949107660) index="0" unique_id=510737213]
 modulate = Color(1, 1, 1, 0)
 
-[node name="SubTitleLabel" parent="MenuContainer/SubTitleMargin/SubTitleContainer" index="0"]
+[node name="SubTitleLabel" parent="MenuContainer/SubTitleMargin/SubTitleContainer" index="0" unique_id=1168528712]
 z_index = 1
 offset_left = -21.000008
 offset_top = 512.0
@@ -357,33 +352,33 @@ text = "a SQUIRREL TEAM game
 FRKatona
 Ciph3rZer0"
 
-[node name="MenuButtonsContainer" parent="MenuContainer/MenuButtonsMargin" index="0"]
+[node name="MenuButtonsContainer" parent="MenuContainer/MenuButtonsMargin" parent_id_path=PackedInt32Array(560400838) index="0" unique_id=2028947735]
 modulate = Color(1, 1, 1, 0)
 
-[node name="MenuButtonsBoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" index="0"]
+[node name="MenuButtonsBoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" index="0" unique_id=947594918]
 lock = true
 
-[node name="ContinueGameButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="1"]
+[node name="ContinueGameButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="1" unique_id=370761406]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 text = "Continue"
 
-[node name="LevelSelectButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="2"]
+[node name="LevelSelectButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="2" unique_id=1822760477]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 text = "Level Select"
 
-[node name="VersionContainer" parent="VersionMargin" index="0"]
+[node name="VersionContainer" parent="VersionMargin" parent_id_path=PackedInt32Array(1386230870) index="0" unique_id=474610315]
 modulate = Color(1, 1, 1, 0)
 
-[node name="ElfPush" type="Sprite2D" parent="VersionMargin" index="1"]
+[node name="ElfPush" type="Sprite2D" parent="VersionMargin" parent_id_path=PackedInt32Array(1386230870) index="1" unique_id=174447852]
 position = Vector2(158, 556)
 scale = Vector2(0.7222222, 0.7222222)
 texture = ExtResource("5_vsp5b")
 
-[node name="NewGameConfirmation" parent="." index="7" instance=ExtResource("5_6xh1d")]
+[node name="NewGameConfirmation" parent="." index="7" unique_id=1443913213 instance=ExtResource("5_6xh1d")]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(420, 200)
@@ -397,7 +392,7 @@ text = "Are you sure you want to start a new game?
 All progress in the current game will be lost."
 title = "New Game"
 
-[node name="MouseFilter" type="Control" parent="." index="8"]
+[node name="MouseFilter" type="Control" parent="." index="8" unique_id=431281808]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -407,12 +402,12 @@ grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
 
-[node name="JingleNotAJingle" type="AudioStreamPlayer" parent="." index="10"]
+[node name="JingleNotAJingle" type="AudioStreamPlayer" parent="." index="10" unique_id=1736145185]
 stream = ExtResource("6_ixa71")
 volume_db = -25.0
 autoplay = true
 
-[node name="ElfJump" type="Sprite2D" parent="." index="11"]
+[node name="ElfJump" type="Sprite2D" parent="." index="11" unique_id=70307446]
 position = Vector2(1071, 226.00002)
 scale = Vector2(0.45254636, 0.45254636)
 texture = ExtResource("8_6xh1d")

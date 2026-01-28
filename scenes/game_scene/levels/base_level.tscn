@@ -1,6 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://8no8y1p4ahyh"]
+[gd_scene format=3 uid="uid://8no8y1p4ahyh"]
 
-[ext_resource type="Script" uid="uid://bera3eo75lgw2" path="res://scenes/game_scene/levels/base_level.gd" id="1_dn6h0"]
+[ext_resource type="Script" path="res://scenes/game_scene/levels/base_level.gd" id="1_dn6h0"]
 [ext_resource type="Texture2D" uid="uid://dpktvjd8678o4" path="res://addons/maaacks_game_template/assets/box_symbol.png" id="2_i64rg"]
 [ext_resource type="Shader" uid="uid://c8ai7r3nu55c3" path="res://assets/shaders/concrete_floor.gdshader" id="2_sjavj"]
 [ext_resource type="PackedScene" uid="uid://uojhyjljopka" path="res://scenes/game_objects/player/player.tscn" id="4_4yf8q"]
@@ -54,14 +54,14 @@ size = Vector3(100, 2, 100)
 [sub_resource type="BoxShape3D" id="BoxShape3D_xwdok"]
 size = Vector3(100, 2, 100)
 
-[node name="BaseLevel" type="Node3D"]
+[node name="BaseLevel" type="Node3D" unique_id=936875825]
 script = ExtResource("1_dn6h0")
 blocks_to_win = null
 time_limit_seconds = null
 
-[node name="Score" type="CanvasLayer" parent="."]
+[node name="Score" type="CanvasLayer" parent="." unique_id=348479644]
 
-[node name="TimeUI" type="Control" parent="Score"]
+[node name="TimeUI" type="Control" parent="Score" unique_id=1641221639]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 5
@@ -72,7 +72,7 @@ offset_right = 136.0
 offset_bottom = 202.0
 grow_horizontal = 2
 
-[node name="TextureRect" type="TextureRect" parent="Score/TimeUI"]
+[node name="TextureRect" type="TextureRect" parent="Score/TimeUI" unique_id=725756554]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -82,7 +82,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_s37xw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Score/TimeUI"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Score/TimeUI" unique_id=4754514]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -90,7 +90,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TimeLabel" type="Label" parent="Score/TimeUI/VBoxContainer"]
+[node name="TimeLabel" type="Label" parent="Score/TimeUI/VBoxContainer" unique_id=1849965191]
 visible = false
 layout_mode = 2
 text = "Time Left"
@@ -98,7 +98,7 @@ label_settings = SubResource("LabelSettings_i64rg")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TimeLeft" type="Label" parent="Score/TimeUI/VBoxContainer"]
+[node name="TimeLeft" type="Label" parent="Score/TimeUI/VBoxContainer" unique_id=725555445]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
@@ -106,7 +106,7 @@ label_settings = SubResource("LabelSettings_o50pn")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScoreUI" type="Control" parent="Score"]
+[node name="ScoreUI" type="Control" parent="Score" unique_id=174727837]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
@@ -115,7 +115,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Score/ScoreUI"]
+[node name="TextureRect" type="TextureRect" parent="Score/ScoreUI" unique_id=2064249856]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -127,7 +127,7 @@ texture = ExtResource("2_i64rg")
 expand_mode = 1
 metadata/_edit_group_ = true
 
-[node name="Score" type="Label" parent="Score/ScoreUI/TextureRect"]
+[node name="Score" type="Label" parent="Score/ScoreUI/TextureRect" unique_id=1977404966]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -140,25 +140,25 @@ label_settings = SubResource("LabelSettings_s37xw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1694928679]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 light_color = Color(1, 0.9607843, 0.9019608, 1)
 shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1602620543]
 environment = SubResource("Environment_0binv")
 
-[node name="Floor" type="StaticBody3D" parent="."]
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1327185572]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1725132768]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 mesh = SubResource("BoxMesh_cmaj0")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=180216943]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 shape = SubResource("BoxShape3D_xwdok")
 
-[node name="Player" parent="." instance=ExtResource("4_4yf8q")]
+[node name="Player" parent="." unique_id=2078089030 instance=ExtResource("4_4yf8q")]

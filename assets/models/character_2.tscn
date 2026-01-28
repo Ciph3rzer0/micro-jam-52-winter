@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://drb8j1r4k28vl"]
+[gd_scene format=4 uid="uid://drb8j1r4k28vl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nv1cf"]
 resource_name = "characterbody"
@@ -13056,12 +13056,12 @@ _data = {
 &"walk": SubResource("Animation_weg67")
 }
 
-[node name="character2" type="Node3D"]
+[node name="character2" type="Node3D" unique_id=433513795]
 
-[node name="rig" type="Node3D" parent="."]
+[node name="rig" type="Node3D" parent="." unique_id=1268677084]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.983717e-05, -5.1130046e-05, -6.910471e-05)
 
-[node name="Skeleton3D" type="Skeleton3D" parent="rig"]
+[node name="Skeleton3D" type="Skeleton3D" parent="rig" unique_id=972647976]
 bones/0/name = "root"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
@@ -14617,30 +14617,33 @@ bones/221/position = Vector3(0, 0, 0)
 bones/221/rotation = Quaternion(0.0019256031, 0, 0, 0.99999815)
 bones/221/scale = Vector3(1, 1, 1)
 
-[node name="character" type="MeshInstance3D" parent="rig/Skeleton3D"]
+[node name="character" type="MeshInstance3D" parent="rig/Skeleton3D" unique_id=54309444]
 mesh = SubResource("ArrayMesh_xmqk5")
 skin = SubResource("Skin_5gh6r")
+skeleton = NodePath("..")
 
-[node name="Cube_002" type="MeshInstance3D" parent="rig/Skeleton3D"]
+[node name="Cube_002" type="MeshInstance3D" parent="rig/Skeleton3D" unique_id=614372413]
 mesh = SubResource("ArrayMesh_7ijfk")
 skin = SubResource("Skin_5gh6r")
+skeleton = NodePath("..")
 
-[node name="hat-ornament" type="MeshInstance3D" parent="rig/Skeleton3D"]
+[node name="hat-ornament" type="MeshInstance3D" parent="rig/Skeleton3D" unique_id=1977761980]
 mesh = SubResource("ArrayMesh_rwlyi")
 skin = SubResource("Skin_5gh6r")
+skeleton = NodePath("..")
 
-[node name="head" type="MeshInstance3D" parent="rig/Skeleton3D"]
+[node name="head" type="MeshInstance3D" parent="rig/Skeleton3D" unique_id=586296030]
 mesh = SubResource("ArrayMesh_ncfcw")
 skin = SubResource("Skin_5gh6r")
+skeleton = NodePath("..")
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="rig/Skeleton3D"]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="rig/Skeleton3D" unique_id=747346887]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7388434, -0.3858596)
 setting_count = 1
 settings/0/root_bone_name = "DEF-spine.005"
 settings/0/root_bone = 6
 settings/0/end_bone_name = ""
 settings/0/end_bone = -1
-settings/0/extend_end_bone = false
 settings/0/center_from = 0
 settings/0/individual_config = false
 settings/0/rotation_axis = 0
@@ -14656,7 +14659,5 @@ settings/0/gravity/direction = Vector3(0, -1, 0)
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_rarxg")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=137632222]
+libraries/ = SubResource("AnimationLibrary_rarxg")

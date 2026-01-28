@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://s0xuhgccm00v"]
+[gd_scene format=3 uid="uid://s0xuhgccm00v"]
 
 [ext_resource type="PackedScene" uid="uid://da6baplelwvuu" path="res://scenes/game_objects/walls/solid_cell.tscn" id="1_77onx"]
 [ext_resource type="PackedScene" uid="uid://b7mgqpqde1m1o" path="res://assets/models/props/tree.glb" id="2_swyje"]
 
-[node name="tree" type="Node3D"]
+[node name="tree" type="Node3D" unique_id=1946047424]
 
-[node name="SolidCell" parent="." instance=ExtResource("1_77onx")]
+[node name="SolidCell" parent="." unique_id=1764803005 instance=ExtResource("1_77onx")]
 transform = Transform3D(0.6922961, 0, 0, 0, 0.93245625, 0, 0, 0, 0.70516646, 0, 0.033771873, 0)
 
-[node name="SolidCell4" parent="." instance=ExtResource("1_77onx")]
+[node name="SolidCell4" parent="." unique_id=1678401956 instance=ExtResource("1_77onx")]
 transform = Transform3D(0.6922961, 0, 0, 0, 0.93245625, 0, 0, 0, 0.70516646, 0, 0.9662281, 0)
 
-[node name="tree2" parent="." instance=ExtResource("2_swyje")]
+[node name="tree2" parent="." unique_id=1496434696 instance=ExtResource("2_swyje")]
 transform = Transform3D(0.5796166, 0, 0, 0, 0.5587036, 0, 0, 0, 0.56009, 0, 0, 0)

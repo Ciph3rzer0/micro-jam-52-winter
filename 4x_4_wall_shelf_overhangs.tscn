@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://h1ipkcebxsy0"]
+[gd_scene format=3 uid="uid://h1ipkcebxsy0"]
 
 [ext_resource type="PackedScene" uid="uid://debgq70csi5ki" path="res://scenes/game_objects/walls/2x2_wall.tscn" id="1_hctk7"]
 [ext_resource type="Material" uid="uid://8u78axk6oy0t" path="res://scenes/game_objects/walls/wall_material.tres" id="2_nk4wk"]
@@ -8,7 +8,7 @@
 [sub_resource type="BoxMesh" id="BoxMesh_rqlbp"]
 material = ExtResource("2_nk4wk")
 
-[node name="4x4_wall_shelf" instance=ExtResource("1_hctk7")]
+[node name="4x4_wall_shelf" unique_id=1554709343 instance=ExtResource("1_hctk7")]
 
 [node name="MeshInstance3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.655, -1.5706186, 0.5, 0)
@@ -38,104 +38,104 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5706186, 1, 0)
 [node name="SolidCell4" parent="." index="7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5706186, 1, 0)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="SolidCell4" index="1"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SolidCell4" index="1" unique_id=1280516821]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.655, 0, 1.5, 0)
 visible = false
 mesh = SubResource("BoxMesh_rqlbp")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="SolidCell4" index="2"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="SolidCell4" index="2" unique_id=1318585755]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.655, 1, 1.5, 0)
 visible = false
 mesh = SubResource("BoxMesh_rqlbp")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="SolidCell4" index="3"]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="SolidCell4" index="3" unique_id=1000196538]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.655, 0, 2.5, 0)
 visible = false
 mesh = SubResource("BoxMesh_rqlbp")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="SolidCell4" index="4"]
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="SolidCell4" index="4" unique_id=1302596822]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.655, 1, 2.5, 0)
 visible = false
 mesh = SubResource("BoxMesh_rqlbp")
 
-[node name="SolidCell" parent="SolidCell4" index="5" instance=ExtResource("3_61dlf")]
+[node name="SolidCell" parent="SolidCell4" index="5" unique_id=369913744 instance=ExtResource("3_61dlf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="SolidCell2" parent="SolidCell4" index="6" instance=ExtResource("3_61dlf")]
+[node name="SolidCell2" parent="SolidCell4" index="6" unique_id=1352567164 instance=ExtResource("3_61dlf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
 
-[node name="SolidCell3" parent="SolidCell4" index="7" instance=ExtResource("3_61dlf")]
+[node name="SolidCell3" parent="SolidCell4" index="7" unique_id=1016112521 instance=ExtResource("3_61dlf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 0)
 
-[node name="SolidCell4" parent="SolidCell4" index="8" instance=ExtResource("3_61dlf")]
+[node name="SolidCell4" parent="SolidCell4" index="8" unique_id=1161872766 instance=ExtResource("3_61dlf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="." index="8"]
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." index="8" unique_id=142871699]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.655, 0.42938137, 0.5, 0)
 visible = false
 mesh = SubResource("BoxMesh_rqlbp")
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="." index="9"]
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." index="9" unique_id=123828909]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.655, 1.4293814, 0.5, 0)
 visible = false
 mesh = SubResource("BoxMesh_rqlbp")
 
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="." index="10"]
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="." index="10" unique_id=182279469]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.655, 0.42938137, 1.5, 0)
 visible = false
 mesh = SubResource("BoxMesh_rqlbp")
 
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="." index="11"]
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="." index="11" unique_id=1584389952]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.655, 1.4293814, 1.5, 0)
 visible = false
 mesh = SubResource("BoxMesh_rqlbp")
 
-[node name="SolidCell5" parent="." index="12" instance=ExtResource("3_61dlf")]
+[node name="SolidCell5" parent="." index="12" unique_id=1306117924 instance=ExtResource("3_61dlf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42938137, 0, 0)
 
-[node name="SolidCell6" parent="." index="13" instance=ExtResource("3_61dlf")]
+[node name="SolidCell6" parent="." index="13" unique_id=51201224 instance=ExtResource("3_61dlf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4293814, 0, 0)
 
-[node name="SolidCell7" parent="." index="14" instance=ExtResource("3_61dlf")]
+[node name="SolidCell7" parent="." index="14" unique_id=1447995446 instance=ExtResource("3_61dlf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4293814, 1, 0)
 
-[node name="SolidCell8" parent="." index="15" instance=ExtResource("3_61dlf")]
+[node name="SolidCell8" parent="." index="15" unique_id=1658704026 instance=ExtResource("3_61dlf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42938137, 1, 0)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="SolidCell8" index="1"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SolidCell8" index="1" unique_id=591188358]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.655, 0, 1.5, 0)
 visible = false
 mesh = SubResource("BoxMesh_rqlbp")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="SolidCell8" index="2"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="SolidCell8" index="2" unique_id=1973614235]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.655, 1, 1.5, 0)
 visible = false
 mesh = SubResource("BoxMesh_rqlbp")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="SolidCell8" index="3"]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="SolidCell8" index="3" unique_id=410713077]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.655, 0, 2.5, 0)
 visible = false
 mesh = SubResource("BoxMesh_rqlbp")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="SolidCell8" index="4"]
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="SolidCell8" index="4" unique_id=1499299995]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.655, 1, 2.5, 0)
 visible = false
 mesh = SubResource("BoxMesh_rqlbp")
 
-[node name="SolidCell" parent="SolidCell8" index="5" instance=ExtResource("3_61dlf")]
+[node name="SolidCell" parent="SolidCell8" index="5" unique_id=2127071903 instance=ExtResource("3_61dlf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="SolidCell2" parent="SolidCell8" index="6" instance=ExtResource("3_61dlf")]
+[node name="SolidCell2" parent="SolidCell8" index="6" unique_id=1085514017 instance=ExtResource("3_61dlf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
 
-[node name="SolidCell3" parent="SolidCell8" index="7" instance=ExtResource("3_61dlf")]
+[node name="SolidCell3" parent="SolidCell8" index="7" unique_id=1961619734 instance=ExtResource("3_61dlf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 0)
 
-[node name="SolidCell4" parent="SolidCell8" index="8" instance=ExtResource("3_61dlf")]
+[node name="SolidCell4" parent="SolidCell8" index="8" unique_id=1067124643 instance=ExtResource("3_61dlf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
-[node name="wall_shelf" parent="." index="16" instance=ExtResource("4_6coir")]
+[node name="wall_shelf" parent="." index="16" unique_id=1938341379 instance=ExtResource("4_6coir")]
 transform = Transform3D(1.1367903, 0, 0, 0, 1.4041584, 0, 0, 0, 1, -0.11182642, 0.01640749, 0.7717606)
 
-[node name="wall_shelf" parent="wall_shelf" index="1" instance=ExtResource("4_6coir")]
+[node name="wall_shelf" parent="wall_shelf" index="1" unique_id=414311555 instance=ExtResource("4_6coir")]
 transform = Transform3D(-1.0084535, 1.7658293e-07, 0, 5.4414925e-15, 7.27343e-08, 1, 7.931345e-08, 1.6639668, -4.3711385e-08, -0.008061707, 3.9076293, -6.313643)

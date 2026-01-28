@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b7ulffon24ubq"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b7ulffon24ubq"]
 
 [ext_resource type="Shader" uid="uid://b0k62xm7culcs" path="res://scenes/game_objects/conveyer/conveyer_belt.gdshader" id="1_c1fgx"]
 

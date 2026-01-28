@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://hag642xd317p"]
+[gd_scene format=3 uid="uid://hag642xd317p"]
 
 [ext_resource type="Script" uid="uid://iu2sm2u8bw7x" path="res://scenes/game_objects/box_spawner/box_spawner.gd" id="1_xrecf"]
 [ext_resource type="PackedScene" uid="uid://c5q5fp0n2evh5" path="res://scenes/game_objects/box/box.tscn" id="2_tygx4"]
@@ -10,22 +10,22 @@ albedo_color = Color(0.723815, 0.37068754, 0.8685037, 0.49411765)
 [sub_resource type="BoxMesh" id="BoxMesh_tygx4"]
 material = SubResource("StandardMaterial3D_xrecf")
 
-[node name="BoxSpawner" type="Node3D"]
+[node name="BoxSpawner" type="Node3D" unique_id=928343452]
 script = ExtResource("1_xrecf")
 scene_to_spawn = ExtResource("2_tygx4")
 
-[node name="Visuals" type="MeshInstance3D" parent="."]
+[node name="Visuals" type="MeshInstance3D" parent="." unique_id=1820250620]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("BoxMesh_tygx4")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Visuals"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Visuals" unique_id=721634825]
 transform = Transform3D(0.25, 0, 0, 0, 10, 0, 0, 0, 0.25, 0, -5.5, 0)
 mesh = SubResource("BoxMesh_tygx4")
 skeleton = NodePath("../../..")
 
-[node name="Timer" type="Timer" parent="." groups=["timed_spawner"]]
+[node name="Timer" type="Timer" parent="." unique_id=181536732 groups=["timed_spawner"]]
 unique_name_in_owner = true
 process_callback = 0
 wait_time = 2.0

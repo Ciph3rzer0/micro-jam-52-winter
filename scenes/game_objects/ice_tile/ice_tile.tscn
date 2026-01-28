@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ba7xl40hutxsb"]
+[gd_scene format=3 uid="uid://ba7xl40hutxsb"]
 
 [ext_resource type="Script" uid="uid://2rpqgle24ss1" path="res://scenes/game_objects/ice_tile/ice_tile.gd" id="1_i3uqv"]
 [ext_resource type="Material" uid="uid://b0rjdfufw5om8" path="res://scenes/game_objects/ice_tile/ice_tile_material.tres" id="1_yrky7"]
@@ -7,9 +7,8 @@
 material = ExtResource("1_yrky7")
 size = Vector3(0.95, 0.05, 0.95)
 
-[node name="IceTile" type="Node3D" groups=["ice_tile"]]
+[node name="IceTile" type="Node3D" unique_id=896930780 groups=["ice_tile"]]
 script = ExtResource("1_i3uqv")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1932372430]
 mesh = SubResource("BoxMesh_shv0j")
-skeleton = NodePath("")

@@ -1,21 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://46gadtqugg8e"]
+[gd_scene format=3 uid="uid://46gadtqugg8e"]
 
 [ext_resource type="PackedScene" uid="uid://da6baplelwvuu" path="res://scenes/game_objects/walls/solid_cell.tscn" id="1_e7xni"]
 [ext_resource type="PackedScene" uid="uid://cx0u2bsde5788" path="res://assets/models/interactive/conveyer_straight.glb" id="2_e7xni"]
 [ext_resource type="PackedScene" uid="uid://d1uvtgyu0h4vq" path="res://scenes/game_objects/conveyer/conveyer.tscn" id="3_e7xni"]
 
-[node name="conveyer-straight" type="Node3D"]
+[node name="conveyer-straight" type="Node3D" unique_id=1197604461]
 
-[node name="SolidCell" parent="." instance=ExtResource("1_e7xni")]
+[node name="SolidCell" parent="." unique_id=1888367316 instance=ExtResource("1_e7xni")]
 
-[node name="SolidCell2" parent="." instance=ExtResource("1_e7xni")]
+[node name="SolidCell2" parent="." unique_id=937953234 instance=ExtResource("1_e7xni")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
-[node name="conveyer_straight" parent="." instance=ExtResource("2_e7xni")]
+[node name="conveyer_straight" parent="." unique_id=941228515 instance=ExtResource("2_e7xni")]
 transform = Transform3D(-4.371139e-08, 0, -1.2399061, 0, 0.67140377, 0, 1, 0, -5.4198015e-08, 0.09846127, 0, 0)
 
-[node name="Conveyer" parent="." instance=ExtResource("3_e7xni")]
+[node name="Conveyer" parent="." unique_id=728277958 instance=ExtResource("3_e7xni")]
 transform = Transform3D(-4.2154003e-08, 0, 1.0247134, 0, 1, 0, -0.96437114, 0, -4.4791644e-08, 0.0324952, 1, 0)
 
-[node name="Conveyer2" parent="." instance=ExtResource("3_e7xni")]
+[node name="Conveyer2" parent="." unique_id=2079542032 instance=ExtResource("3_e7xni")]
 transform = Transform3D(-4.2154003e-08, 0, 1.0247134, 0, 1, 0, -0.96437114, 0, -4.4791644e-08, 1.0077817, 1, 0)
