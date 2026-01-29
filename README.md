@@ -1,176 +1,87 @@
-# Godot Game Template
-For Godot 4.5 (4.3+ compatible)
+# Boxes For The Big Man 🎅
 
-This template has a main menu, options menus, pause menu, credits, scene loader, extra tools, and an example game scene.  
+Get Santa's deliveries ready for the big night with another Sokoban!
 
-[Example on itch.io](https://maaack.itch.io/godot-game-template)  
+A 3D puzzle game made as a submission for [Micro Jam 52: Winter](https://itch.io/jam/micro-jam-052) with the theme "constantly overworked".
 
-[Featured Games](#featured-games)  
+## 🎮 Game Overview
 
-### Videos
+Help Santa prepare for Christmas by organizing present deliveries in this 3D Sokoban puzzle game. Push crates of presents to their delivery locations while navigating through various obstacles and interactive floor tiles that add complexity to the classic Sokoban formula.
 
-[![Quick Intro Video](https://img.youtube.com/vi/U9CB3vKINVw/hqdefault.jpg)](https://youtu.be/U9CB3vKINVw)  
-[More Videos](/addons/maaacks_game_template/docs/Videos.md)
+### Goal
+Fill each delivery tile (white plate with red arrow) with a crate of presents (block with red bow tie).
 
-### Screenshots
-![Main Menu](/addons/maaacks_game_template/media/screenshot-6-main-menu-5.png)  
-![Key Rebinding](/addons/maaacks_game_template/media/screenshot-6-input-list-8.png)  
-![Audio Controls](/addons/maaacks_game_template/media/screenshot-6-audio-options-2.png)  
-![Video Controls](/addons/maaacks_game_template/media/screenshot-6-video-options-5.png)  
-![Pause Menu](/addons/maaacks_game_template/media/screenshot-6-pause-menu-3.png)  
-[More Screenshots](/addons/maaacks_game_template/docs/Screenshots.md)  
+### How to Play
+- **Movement**: Use WASD keys to move your character
+- **Pushing**: Walk into crate blocks to push them in the direction you're moving
+- **Strategy**: Push crates one tile at a time until they reach their delivery destinations
 
-## Objective
+## 🧩 Game Mechanics
 
-Setup menus and accessibility features in about 15 minutes.
+### Tile Types
+- **Generic Obstacles** (trees, barrels, desks): Block movement from all directions
+- **Floater Obstacles**: Block the player but allow crates to be pushed both under and through them
+  - Stacked blocks function as floaters, allowing the bottom block to be pushed out from under others
+- **Conveyor Tiles**: Push blocks one tile in the arrow direction (only affect blocks)
+  - Player has strength to push blocks against opposing conveyor belts
+- **Ice Tiles**: Push one tile in the direction of movement (affects both blocks and player)
+  - ⚠️ Caution: Blocks dropped from height will break through ice tiles and sink (ice is only one block deep)
+- **Lift Tiles**: Propel blocks up and forward in the arrow direction, useful for accessing raised conveyor tiles
 
-The template can be the start of a new project, or plug into an existing one. It is game agnostic (2D or 3D) and can work with multiple target resolutions, up to 4k and down to 640x360. It's meant to cover the needs for a typical game jam, while remaining scalable and extensible enough to support commercial games.
+## 🛠️ Development
 
-## Features
+### Built With
+- **Game Engine**: [Godot Engine 4.6](https://godotengine.org/)
+- **3D Modeling**: Blender
+- **Audio**: FL Studio
+- **Code Editor**: VS Code
 
-### Base
+### Project Structure
+```
+├── assets/          # Game assets (audio, models, images)
+├── scenes/          # Game scenes and UI
+├── scripts/         # Game logic and state management
+├── autoloads/       # Global singletons and controllers
+├── resources/       # Themes and resources
+└── addons/          # Third-party plugins (Maaack's Game Template)
+```
 
-The `base/` folder holds the core components of the menus application.
+### Key Features
+- 3D grid-based discrete movement with smooth position interpolation
+- Multiple interactive tile types for complex puzzle mechanics
+- Game state management system
+- Integrated game template with menus, credits, and loading screens
 
--   Main Menu    
--   Options Menus
--   Pause Menu
--   Credits
--   Loading Screen
--   Opening Scene
--   Persistent Settings
--   Simple Config Interface
--   Extensible Overlay Menus
--   Keyboard/Mouse Support
--   Gamepad Support
--   UI Sound Controller
--   Background Music Controller
+## 🎯 Installation & Setup
 
-### Extras
+### Playing the Game
+1. Download the latest release from the releases page
+2. Extract the files
+3. Run the executable
 
-The `extras/` folder holds components that extend the core application.
+### Development Setup
+1. **Prerequisites**: Download [Godot Engine 4.6+](https://godotengine.org/download)
+2. **Clone**: `git clone [repository-url]`
+3. **Open**: Launch Godot and import the `project.godot` file
+4. **Run**: Press F5 or click the Play button in Godot
 
--   Level Loaders
--   Level Progress Manager
--   Win / Lose Manager
--   Script for Releasing on [itch.io](https://itch.io/) with [butler](https://itch.io/docs/butler/)
- 
-### Examples 
+### Web Export
+A web version is available in the `webexport/` directory. Host the files on a web server to play in browser.
 
-The `examples/` folder contains an example project using inherited scenes from the `base/` and `extras/`.
+## 👥 Credits
 
--   Game Scene
--   Level Class & 3 Levels
--   Tutorial Windows & 3 Tutorial Messages
--   Win & Lose Windows
--   Master Options Menu
--   End Credits
--   Main Menu w/ Animations
--   Opening w/ Godot Logo
+### Squirrel Team
+- **Ciph3rzer0** ([itch.io profile](https://itch.io/profile/ciph3rzer0)) - Programming and game logic
+- **FRKatona** - 3D art and visual design
 
-### Minimal
+### Third-Party Assets
+- **[Maaack's Game Template](https://github.com/Maaack/Godot-Game-Template)** - UI framework and project structure
+- **Godot Engine Logo** - Andrea Calabró ([CC BY 4.0](https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.txt))
 
-Users that want a minimal set of features can try [Maaack's Menus Template](https://github.com/Maaack/Godot-Menus-Template) or other options from the [plugin suite](/addons/maaacks_game_template/docs/PluginSuite.md).  
+## 📄 License
 
-
-## Installation
-
-### Godot Asset Library
-This package is available as both a template and a plugin, meaning it can be used to start a new project, or added to an existing project. 
-
-![Package Icon](/addons/maaacks_game_template/media/game-icon-black-transparent-256x256.png)  
-
-When starting a new project:
-
-1.  Go to the `Asset Library Projects` tab.
-2.  Search for "Maaack's Game Template".
-3.  Click on the result to open the template details.
-4.  Click to Download.
-5.  Give the project a new name and destination.
-6.  Click to Install & Edit.
-7.  Continue with the [New Project Instructions](/addons/maaacks_game_template/docs/NewProject.md)
-
-When editing an existing project:
-
-1.  Go to the `AssetLib` tab.
-2.  Search for "Maaack's Game Template Plugin".
-3.  Click on the result to open the plugin details.
-4.  Click to Download.
-5.  Check that contents are getting installed to `addons/` and there are no conflicts.
-6.  Click to Install.
-7.  Reload the project (you may see errors before you do this).
-8.  Enable the plugin from the Project Settings > Plugins tab.  
-    If it's enabled for the first time,
-    1.  A dialogue window will appear asking to copy the example scenes out of `addons/`.
-    2.  Another dialogue window will ask to update the project's main scene.
-9.  Continue with the [Existing Project Instructions](/addons/maaacks_game_template/docs/ExistingProject.md)  
-
-
-### GitHub
-
-
-1.  Download the latest release version from [GitHub](https://github.com/Maaack/Godot-Game-Template/releases/latest).  
-2.  Extract the contents of the archive.
-3.  Move the `addons/maaacks_game_template` folder into your project's `addons/` folder.  
-4.  Open/Reload the project.  
-5.  Enable the plugin from the Project Settings > Plugins tab.  
-    If it's enabled for the first time,
-    1.  A dialogue window will appear asking to copy the example scenes out of `addons/`.
-    2.  Another dialogue window will ask to update the project's main scene.
-6.  Continue with the [Existing Project Instructions](/addons/maaacks_game_template/docs/ExistingProject.md) 
-
-
-## Usage
-
-### New Project
-These instructions assume starting with the entire contents of the project folder. This will be the case when cloning the repo, or starting from the *template* version in the Godot Asset Library.
-  
-
-[New Project Instructions](/addons/maaacks_game_template/docs/NewProject.md)
-
-### Existing Project
-
-These instructions assume starting with just the contents of `addons/`. This will be the case when installing the *plugin* version in the Godot Asset Library.
-
-[Existing Project Instructions](/addons/maaacks_game_template/docs/ExistingProject.md)  
-   
-### More Documentation
-
-[Main Menu Setup](/addons/maaacks_game_template/docs/MainMenuSetup.md)  
-[Game Scene Setup](/addons/maaacks_game_template/docs/GameSceneSetup.md)  
-[Loading Scenes](/addons/maaacks_game_template/docs/LoadingScenes.md)  
-[Input Icon Mapping](/addons/maaacks_game_template/docs/InputIconMapping.md)  
-[Joypad Inputs](/addons/maaacks_game_template/docs/JoypadInputs.md)  
-[Blending Music](/addons/maaacks_game_template/docs/BlendingMusic.md)  
-[Add Custom Options](/addons/maaacks_game_template/docs/AddingCustomOptions.md)  
-[Game Saving](/addons/maaacks_game_template/docs/GameSaving.md)  
-[How Parts Work](/addons/maaacks_game_template/docs/HowPartsWork.md)  
-[Moving Files](/addons/maaacks_game_template/docs/MovingFiles.md)  
-[Uploading to itch.io](/addons/maaacks_game_template/docs/UploadingToItchIo.md)  
-[Build and Publish Your Game Using CICD](/addons/maaacks_game_template/docs/BuildAndPublish.md)  
-[Automatic Updating](/addons/maaacks_game_template/docs/AutomaticUpdating.md)  
-[Exhibiting Your Game](/addons/maaacks_game_template/docs/Exhibiting.md)  
+See [ATTRIBUTION.md](ATTRIBUTION.md) for detailed attribution and licensing information.
 
 ---
 
-## Featured Games
-
-| Baking Godium | Spud Customs | Rent Seek Kill |  
-| :-------:| :-------: | :-------: |
-| ![Baking Godium](/addons/maaacks_game_template/media/thumbnail-game-baking-godium.png) | ![Spud Customs](/addons/maaacks_game_template/media/thumbnail-game-spud-customs.png) | ![Rent-Seek-Kill](/addons/maaacks_game_template/media/thumbnail-game-rent-seek-kill.png) |
-|  [Play on itch.io](https://maaack.itch.io/baking-godium) | [Find on Steam](https://store.steampowered.com/app/3291880/Spud_Customs/) | [Play on itch.io](https://xandruher.itch.io/rent-seek-kill)  |
-
-
-[All Shared Games](/addons/maaacks_game_template/docs/GamesMade.md)  
-
-
-## Community
-
-Join the [Discord server](https://discord.gg/AyZrJh5AMp ) and share your work with others. It's also a space for getting or giving feedback, and asking for help. 
- 
-
-## Links
-[Attribution](/addons/maaacks_game_template/ATTRIBUTION.md)  
-[License](/addons/maaacks_game_template/LICENSE.txt)  
-[Godot Asset Library - Template](https://godotengine.org/asset-library/asset/2703)  
-[Godot Asset Library - Plugin](https://godotengine.org/asset-library/asset/2709)  
+*Made with ❄️ for Micro Jam 52: Winter*
