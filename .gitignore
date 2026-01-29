@@ -17,6 +17,7 @@ mono_crash.*.json
 # Export folders
 exports/
 Exports/
+webexport/
 
 # IDE and OS specific
 .vscode/
