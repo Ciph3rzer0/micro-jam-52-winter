@@ -7,6 +7,7 @@ const VEC_DOWN: Vector3i = Vector3i(0, 0, 1)
 const VEC_LEFT: Vector3i = Vector3i(-1, 0, 0)
 const VEC_RIGHT: Vector3i = Vector3i(1, 0, 0)
 
+var tap_move_queue: Array[Vector3i] = []
 var move_queue: Array[Vector3i] = []
 var is_pushing: bool = false
 
@@ -28,7 +29,34 @@ func _ready() -> void:
 	LevelGrid.add_object_to_grid(self)
 	discrete_position.move_started.connect(_on_move_started)
 
-func _process(delta: float) -> void:
+func _move_player():
+	if Input.is_action_just_pressed("move_up") and tap_move_queue.is_empty():
+		if not tap_move_queue.has(VEC_UP):
+			tap_move_queue.push_front(VEC_UP)
+	
+	if Input.is_action_just_pressed("move_down") and tap_move_queue.is_empty():
+		if not tap_move_queue.has(VEC_DOWN):
+			tap_move_queue.push_front(VEC_DOWN)
+
+	if Input.is_action_just_pressed("move_left") and tap_move_queue.is_empty():
+		if not tap_move_queue.has(VEC_LEFT):
+			tap_move_queue.push_front(VEC_LEFT)
+
+	if Input.is_action_just_pressed("move_right") and tap_move_queue.is_empty():
+		if not tap_move_queue.has(VEC_RIGHT):
+			tap_move_queue.push_front(VEC_RIGHT)
+
+	if not discrete_position.is_moving and not tap_move_queue.is_empty():
+		var dir = tap_move_queue.pop_front()
+		_update_rotation(dir)
+		if not discrete_position.is_moving:
+			LevelGrid.try_move_player(self, dir)
+		return
+	
+	_move_player_hold()
+
+func _move_player_hold():
+	# Hold Queue
 	var queued_move_up = move_queue.find(VEC_UP)
 	var queued_move_left = move_queue.find(VEC_LEFT)
 	var queued_move_down = move_queue.find(VEC_DOWN)
@@ -64,10 +92,13 @@ func _process(delta: float) -> void:
 		if queued_move_right >= 0:
 			move_queue.erase(VEC_RIGHT)
 
-	if not move_queue.is_empty():
+	if not discrete_position.is_moving and not move_queue.is_empty():
 		_update_rotation(move_queue.front())
 		if not discrete_position.is_moving:
 			LevelGrid.try_move_player(self, move_queue.front())
+
+func _process(delta: float) -> void:
+	_move_player()
 
 	discrete_position.tick(delta)
 	_update_animation_state()
