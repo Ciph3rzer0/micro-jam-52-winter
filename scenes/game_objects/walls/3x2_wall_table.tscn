@@ -6,16 +6,16 @@
 
 [node name="2x2 Wall" unique_id=1174223594 instance=ExtResource("1_b1ohi")]
 
-[node name="MeshInstance3D" parent="." index="0"]
+[node name="MeshInstance3D" parent="." index="0" unique_id=269862780]
 visible = false
 
-[node name="MeshInstance3D2" parent="." index="1"]
+[node name="MeshInstance3D2" parent="." index="1" unique_id=1690604683]
 visible = false
 
-[node name="MeshInstance3D3" parent="." index="2"]
+[node name="MeshInstance3D3" parent="." index="2" unique_id=2020764119]
 visible = false
 
-[node name="MeshInstance3D4" parent="." index="3"]
+[node name="MeshInstance3D4" parent="." index="3" unique_id=895552664]
 visible = false
 
 [node name="SolidCell5" parent="." index="8" unique_id=2122065401 instance=ExtResource("2_y1e2y")]

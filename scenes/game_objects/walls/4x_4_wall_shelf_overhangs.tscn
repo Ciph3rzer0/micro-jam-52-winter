@@ -10,32 +10,32 @@ material = ExtResource("2_nk4wk")
 
 [node name="4x4_wall_shelf" unique_id=1554709343 instance=ExtResource("1_hctk7")]
 
-[node name="MeshInstance3D" parent="." index="0"]
+[node name="MeshInstance3D" parent="." index="0" unique_id=269862780]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.655, -1.5706186, 0.5, 0)
 visible = false
 
-[node name="MeshInstance3D2" parent="." index="1"]
+[node name="MeshInstance3D2" parent="." index="1" unique_id=1690604683]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.655, -0.5706186, 0.5, 0)
 visible = false
 
-[node name="MeshInstance3D3" parent="." index="2"]
+[node name="MeshInstance3D3" parent="." index="2" unique_id=2020764119]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.655, -1.5706186, 1.5, 0)
 visible = false
 
-[node name="MeshInstance3D4" parent="." index="3"]
+[node name="MeshInstance3D4" parent="." index="3" unique_id=895552664]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.655, -0.5706186, 1.5, 0)
 visible = false
 
-[node name="SolidCell" parent="." index="4"]
+[node name="SolidCell" parent="." index="4" unique_id=171047582]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5706186, 0, 0)
 
-[node name="SolidCell2" parent="." index="5"]
+[node name="SolidCell2" parent="." index="5" unique_id=1369049778]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5706186, 0, 0)
 
-[node name="SolidCell3" parent="." index="6"]
+[node name="SolidCell3" parent="." index="6" unique_id=2041916793]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5706186, 1, 0)
 
-[node name="SolidCell4" parent="." index="7"]
+[node name="SolidCell4" parent="." index="7" unique_id=123450951]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5706186, 1, 0)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="SolidCell4" index="1" unique_id=1280516821]
