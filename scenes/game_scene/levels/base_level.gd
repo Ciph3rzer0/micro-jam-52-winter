@@ -20,6 +20,10 @@ var collected_blocks: int = 0
 @export var time_limit_seconds: float = 0.0
 var time_elapsed_seconds: float = 0.0
 
+const RELOAD_HOLD_TIME := 1.1
+const RELOAD_UI_LINGER := 0.5
+var reload_pressed := false
+var reload_hold_timer := -RELOAD_UI_LINGER
 
 func loading_zones_unload_blocks() -> bool:
 	return blocks_to_win > 0
@@ -43,6 +47,25 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	# This makes sure the reload doesn't trigger on the reloaded scene
+	# (only after the button is released and pressed again in the new scene)
+	if Input.is_action_just_pressed("reload_level"):
+		reload_pressed = true
+
+	if reload_pressed and Input.is_action_pressed("reload_level"):
+		reload_hold_timer = max(reload_hold_timer, 0.0)
+		reload_hold_timer += _delta
+		if reload_hold_timer >= RELOAD_HOLD_TIME:
+			print("Reloading level...")
+			reload_pressed = false
+			SceneLoader.reload_current_scene()
+	else:
+		reload_hold_timer = max(-RELOAD_UI_LINGER, reload_hold_timer - _delta * 4.0)
+	
+	%RestartUI.visible = reload_hold_timer > -RELOAD_UI_LINGER
+	%RestartProgressBar.value = ease(reload_hold_timer / RELOAD_HOLD_TIME, 0.4) * 100.0
+
+
 	# CHEATS
 	if Input.is_key_pressed(Key.KEY_C):
 		if Input.is_key_pressed(Key.KEY_G):

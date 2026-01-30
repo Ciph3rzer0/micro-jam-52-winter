@@ -5,6 +5,11 @@
 [ext_resource type="Material" uid="uid://ce3tpbq7wi3x5" path="res://scenes/game_objects/floor/concrete_floor_material.tres" id="3_s37xw"]
 [ext_resource type="PackedScene" uid="uid://uojhyjljopka" path="res://scenes/game_objects/player/player.tscn" id="4_4yf8q"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_02n0s"]
+font_size = 28
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="Gradient" id="Gradient_i64rg"]
 offsets = PackedFloat32Array(0.6015284, 1)
 colors = PackedColorArray(0, 0, 0, 0.85490197, 0, 0, 0, 0)
@@ -42,10 +47,46 @@ tonemap_mode = 2
 
 [node name="BaseLevel" type="Node3D" unique_id=936875825]
 script = ExtResource("1_dn6h0")
-blocks_to_win = null
-time_limit_seconds = null
 
 [node name="Score" type="CanvasLayer" parent="." unique_id=348479644]
+
+[node name="RestartUI" type="Control" parent="Score" unique_id=284123406]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 467.0
+offset_bottom = 167.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Score/RestartUI" unique_id=964796786]
+layout_mode = 1
+offset_right = 368.0
+offset_bottom = 112.0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="RestartProgressBar" type="ProgressBar" parent="Score/RestartUI/MarginContainer" unique_id=1609324325]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+show_percentage = false
+
+[node name="HoldRLabel" type="Label" parent="Score/RestartUI/MarginContainer/RestartProgressBar" unique_id=345057866]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hold [R] to Restart"
+label_settings = SubResource("LabelSettings_02n0s")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TimeUI" type="Control" parent="Score" unique_id=1641221639]
 unique_name_in_owner = true
@@ -98,6 +139,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 917.0
+offset_bottom = -490.0
 grow_horizontal = 2
 grow_vertical = 2
 
