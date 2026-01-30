@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://8no8y1p4ahyh"]
 
-[ext_resource type="Script" path="res://scenes/game_scene/levels/base_level.gd" id="1_dn6h0"]
+[ext_resource type="Script" uid="uid://bera3eo75lgw2" path="res://scenes/game_scene/levels/base_level.gd" id="1_dn6h0"]
 [ext_resource type="Texture2D" uid="uid://dpktvjd8678o4" path="res://addons/maaacks_game_template/assets/box_symbol.png" id="2_i64rg"]
-[ext_resource type="Shader" uid="uid://c8ai7r3nu55c3" path="res://assets/shaders/concrete_floor.gdshader" id="2_sjavj"]
+[ext_resource type="Material" uid="uid://ce3tpbq7wi3x5" path="res://scenes/game_objects/floor/concrete_floor_material.tres" id="3_s37xw"]
 [ext_resource type="PackedScene" uid="uid://uojhyjljopka" path="res://scenes/game_objects/player/player.tscn" id="4_4yf8q"]
 
 [sub_resource type="Gradient" id="Gradient_i64rg"]
@@ -39,20 +39,6 @@ sky_material = SubResource("ProceduralSkyMaterial_cmaj0")
 background_mode = 2
 sky = SubResource("Sky_xwdok")
 tonemap_mode = 2
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0binv"]
-render_priority = 0
-shader = ExtResource("2_sjavj")
-shader_parameter/base_color = Color(0.27509058, 0.27509058, 0.2750905, 1)
-shader_parameter/line_color = Color(0.1, 0.1, 0.1, 1)
-shader_parameter/splotch_color = Color(0.19315353, 0.19315356, 0.19315338, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_cmaj0"]
-material = SubResource("ShaderMaterial_0binv")
-size = Vector3(100, 2, 100)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_xwdok"]
-size = Vector3(100, 2, 100)
 
 [node name="BaseLevel" type="Node3D" unique_id=936875825]
 script = ExtResource("1_dn6h0")
@@ -148,17 +134,11 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1602620543]
 environment = SubResource("Environment_0binv")
 
-[node name="Floor" type="StaticBody3D" parent="." unique_id=1327185572]
-metadata/_edit_group_ = true
+[node name="FloorCSG" type="CSGBox3D" parent="." unique_id=32835379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011456549, -0.99999976, 0.0011396408)
+material_override = ExtResource("3_s37xw")
+size = Vector3(100, 2, 100)
 metadata/_edit_lock_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1725132768]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-mesh = SubResource("BoxMesh_cmaj0")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=180216943]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-shape = SubResource("BoxShape3D_xwdok")
+metadata/_edit_group_ = true
 
 [node name="Player" parent="." unique_id=2078089030 instance=ExtResource("4_4yf8q")]

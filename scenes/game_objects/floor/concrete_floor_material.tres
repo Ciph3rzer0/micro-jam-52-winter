@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ce3tpbq7wi3x5"]
+
+[ext_resource type="Shader" uid="uid://c8ai7r3nu55c3" path="res://assets/shaders/concrete_floor.gdshader" id="1_c0q4i"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_c0q4i")
+shader_parameter/base_color = Color(0.27509058, 0.27509058, 0.2750905, 1)
+shader_parameter/line_color = Color(0.1, 0.1, 0.1, 1)
+shader_parameter/splotch_color = Color(0.19315353, 0.19315356, 0.19315338, 1)
