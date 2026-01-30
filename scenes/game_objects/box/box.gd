@@ -1,9 +1,6 @@
-extends CharacterBody3D
-class_name MovableObject
+extends MovableObject
 
 @export var PUSH_SPEED: float = 5.0
-
-var discrete_position: DiscretePosition
 
 const AUDIO_SLIDE = preload("res://assets/audio/sfx/slide_1.mp3")
 const AUDIO_EXCHANGE = preload("res://assets/audio/sfx/jingle-uh-oh.mp3")
