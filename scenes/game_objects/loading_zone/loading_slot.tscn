@@ -24,7 +24,7 @@ material = SubResource("StandardMaterial3D_s2msx")
 [node name="Loading Slot" type="Marker3D" unique_id=1364054357]
 script = ExtResource("1_emn6g")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=38063549]
+[node name="SlotMesh" type="MeshInstance3D" parent="." unique_id=38063549]
 mesh = SubResource("BoxMesh_k1xfd")
 
 [node name="Indicator" type="Node3D" parent="." unique_id=1435101539]
