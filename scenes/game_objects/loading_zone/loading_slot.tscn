@@ -1,9 +1,39 @@
 [gd_scene format=3 uid="uid://yxh6nkn6md4o"]
 
+[ext_resource type="Script" uid="uid://vtrum2x6mhfy" path="res://scenes/game_objects/loading_zone/loading_slot.gd" id="1_emn6g"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_k1xfd"]
 size = Vector3(0.95, 0.1, 0.95)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1vss0"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.9131387, 0, 0.19669816, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_f3u13"]
+material = SubResource("StandardMaterial3D_1vss0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s2msx"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.9131387, 0, 0.19669816, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_emn6g"]
+material = SubResource("StandardMaterial3D_s2msx")
+
 [node name="Loading Slot" type="Marker3D" unique_id=1364054357]
+script = ExtResource("1_emn6g")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=38063549]
 mesh = SubResource("BoxMesh_k1xfd")
+
+[node name="Indicator" type="Node3D" parent="." unique_id=1435101539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43274903, 0)
+
+[node name="orb" type="MeshInstance3D" parent="Indicator" unique_id=449817492]
+transform = Transform3D(0.16974996, 0, 0, 0, 0.16974996, 0, 0, 0, 0.16974996, 0, 0, 0)
+mesh = SubResource("SphereMesh_f3u13")
+
+[node name="arrow1" type="MeshInstance3D" parent="Indicator" unique_id=697951734]
+transform = Transform3D(0.34526935, -3.229662e-09, -5.529048e-10, -1.0671799e-08, -0.32837787, 7.450581e-09, 4.4204054e-09, -2.752102e-08, -0.06685139, 0, 0, 0)
+mesh = SubResource("PrismMesh_emn6g")

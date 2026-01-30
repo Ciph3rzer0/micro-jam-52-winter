@@ -11,20 +11,44 @@ time_limit_seconds = 19.0
 [node name="Loading Zone" parent="." index="5" unique_id=2116456641 instance=ExtResource("2_7yjko")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
-[node name="Box" parent="." index="6" unique_id=888093855 instance=ExtResource("3_rhf8e")]
+[node name="Loading Zone2" parent="." index="6" unique_id=304213250 instance=ExtResource("2_7yjko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -2)
+
+[node name="Loading Zone3" parent="." index="7" unique_id=437351751 instance=ExtResource("2_7yjko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -3)
+
+[node name="Loading Zone4" parent="." index="8" unique_id=1832746935 instance=ExtResource("2_7yjko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -4)
+
+[node name="Loading Zone5" parent="." index="9" unique_id=684620244 instance=ExtResource("2_7yjko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -5)
+
+[node name="Loading Zone7" parent="." index="10" unique_id=156566167 instance=ExtResource("2_7yjko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -2)
+
+[node name="Loading Zone8" parent="." index="11" unique_id=1245508538 instance=ExtResource("2_7yjko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -3)
+
+[node name="Loading Zone9" parent="." index="12" unique_id=723673137 instance=ExtResource("2_7yjko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -4)
+
+[node name="Loading Zone10" parent="." index="13" unique_id=1203252280 instance=ExtResource("2_7yjko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -5)
+
+[node name="Box" parent="." index="14" unique_id=888093855 instance=ExtResource("3_rhf8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -4)
 
-[node name="Box2" parent="." index="7" unique_id=1843176917 instance=ExtResource("3_rhf8e")]
+[node name="Box2" parent="." index="15" unique_id=1843176917 instance=ExtResource("3_rhf8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -4)
 
-[node name="Box3" parent="." index="8" unique_id=204416191 instance=ExtResource("3_rhf8e")]
+[node name="Box3" parent="." index="16" unique_id=204416191 instance=ExtResource("3_rhf8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 
-[node name="Box4" parent="." index="9" unique_id=2021847232 instance=ExtResource("3_rhf8e")]
+[node name="Box4" parent="." index="17" unique_id=2021847232 instance=ExtResource("3_rhf8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
 
-[node name="Box5" parent="." index="10" unique_id=1450781258 instance=ExtResource("3_rhf8e")]
+[node name="Box5" parent="." index="18" unique_id=1450781258 instance=ExtResource("3_rhf8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
 
-[node name="Box6" parent="." index="11" unique_id=876057969 instance=ExtResource("3_rhf8e")]
+[node name="Box6" parent="." index="19" unique_id=876057969 instance=ExtResource("3_rhf8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
