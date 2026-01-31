@@ -1,0 +1,4 @@
+class_name MovableObject
+extends CharacterBody3D
+
+var discrete_position: DiscretePosition
