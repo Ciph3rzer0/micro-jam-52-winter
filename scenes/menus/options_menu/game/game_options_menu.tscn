@@ -23,4 +23,27 @@ search_depth = 2
 [node name="ResetGameControl" parent="VBoxContainer" unique_id=380075661 instance=ExtResource("3_pfgxr")]
 layout_mode = 2
 
+[node name="TimerControls" type="HBoxContainer" parent="VBoxContainer" unique_id=1775794217]
+layout_mode = 2
+
+[node name="TimerText" type="Label" parent="VBoxContainer/TimerControls" unique_id=1648807780]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Timer Difficulty "
+
+[node name="TimerOptions" type="OptionButton" parent="VBoxContainer/TimerControls" unique_id=2107301368]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "Normal"
+popup/item_0/id = 0
+popup/item_1/text = "Casual"
+popup/item_1/id = 1
+popup/item_2/text = "Off"
+popup/item_2/id = 2
+
 [connection signal="reset_confirmed" from="VBoxContainer/ResetGameControl" to="." method="_on_ResetGameControl_reset_confirmed"]
+[connection signal="item_selected" from="VBoxContainer/TimerControls/TimerOptions" to="." method="_on_timer_options_item_selected"]

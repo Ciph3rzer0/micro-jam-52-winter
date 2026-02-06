@@ -18,6 +18,7 @@ signal level_changed(level_path : String)
 var collected_blocks: int = 0
 
 @export var time_limit_seconds: float = 0.0
+var modified_time_limit_seconds: float = 0.0
 var time_elapsed_seconds: float = 0.0
 
 const RELOAD_HOLD_TIME := 1.1
@@ -37,8 +38,16 @@ func _init() -> void:
 
 
 func _ready() -> void:
+	match PlayerConfig.get_config("GameSettings", "timer_difficulty", 0):
+		0:
+			modified_time_limit_seconds = time_limit_seconds
+		1:
+			modified_time_limit_seconds = time_limit_seconds * 1.5
+		2:
+			modified_time_limit_seconds = 0
+
 	level_state = GameState.get_level_state(scene_file_path)
-	%TimeUI.visible = time_limit_seconds > 0.0
+	%TimeUI.visible = modified_time_limit_seconds > 0.0
 	%ScoreUI.visible = blocks_to_win > 0.0
 	# %ColorPickerButton.color = level_state.color
 	# %BackgroundColor.color = level_state.color
@@ -75,11 +84,11 @@ func _process(_delta: float) -> void:
 			process_mode = Node.PROCESS_MODE_DISABLED
 			level_lost.emit()
 
-	if time_limit_seconds > 0.0:
+	if modified_time_limit_seconds > 0.0:
 		time_elapsed_seconds += _delta
 		if has_node("%TimeLeft"):
-			%TimeLeft.text = "%.2f" % max(time_limit_seconds - time_elapsed_seconds, 0)
-		if time_elapsed_seconds >= time_limit_seconds:
+			%TimeLeft.text = "%.2f" % max(modified_time_limit_seconds - time_elapsed_seconds, 0)
+		if time_elapsed_seconds >= modified_time_limit_seconds:
 			process_mode = Node.PROCESS_MODE_DISABLED
 			level_lost.emit()
 
