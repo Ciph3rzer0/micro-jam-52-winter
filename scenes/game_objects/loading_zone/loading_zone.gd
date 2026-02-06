@@ -1,4 +1,5 @@
 extends Node3D
+class_name LoadingZone
 
 signal loading_complete()
 signal loading_incomplete()

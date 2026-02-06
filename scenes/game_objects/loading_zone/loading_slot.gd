@@ -8,7 +8,7 @@ const HOVER_PERIOD := 800.0
 const HOVER_RANGE := 1.0/8
 const HOVER_HEIGHT := 1.0/3
 
-
+@onready var owning_loading_zone: LoadingZone = get_parent().get_parent()
 @onready var slot_mesh: MeshInstance3D = $SlotMesh as MeshInstance3D
 @onready var discrete_position: DiscretePosition = DiscretePosition.new(self)
 var is_filled: bool = false
@@ -26,7 +26,7 @@ func _process(_delta):
 	$Indicator.position.y = height
 	_check_for_box()
 
-	if owner.fully_loaded:
+	if owning_loading_zone.fully_loaded:
 		slot_mesh.material_override.albedo_color \
 			= LoadingSlot.COLOR_ACTIVE.lerp(LoadingSlot.COLOR_INACTIVE, \
 			(sin(Time.get_ticks_msec() / 100.0) * 0.5 + 0.5))
