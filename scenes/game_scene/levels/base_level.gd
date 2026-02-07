@@ -36,8 +36,8 @@ var level_state : LevelState
 func _init() -> void:
 	LevelGrid.clear_grid()
 
-
-func _ready() -> void:
+	GameState.player_speed_modifier = PlayerConfig.get_config("GameSettings", "player_speed", 1.0)
+	PlayerConfig.get_config("GameSettings", "player_speed", 1.0)
 	match PlayerConfig.get_config("GameSettings", "timer_difficulty", 0):
 		0:
 			modified_time_limit_seconds = time_limit_seconds
@@ -46,6 +46,8 @@ func _ready() -> void:
 		2:
 			modified_time_limit_seconds = 0
 
+
+func _ready() -> void:
 	level_state = GameState.get_level_state(scene_file_path)
 	%TimeUI.visible = modified_time_limit_seconds > 0.0
 	%ScoreUI.visible = blocks_to_win > 0.0

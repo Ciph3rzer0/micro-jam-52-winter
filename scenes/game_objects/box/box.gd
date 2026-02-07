@@ -1,6 +1,6 @@
 extends MovableObject
 
-@export var PUSH_SPEED: float = 5.0
+@export var FALL_SPEED: float = 5.0
 
 const AUDIO_SLIDE = preload("res://assets/audio/sfx/slide_1.mp3")
 const AUDIO_EXCHANGE = preload("res://assets/audio/sfx/jingle-uh-oh.mp3")
@@ -12,7 +12,7 @@ var has_fallen: bool = false
 # A box needs to hold discrete positions and move towards an adjacent tile
 func _ready() -> void:
 	discrete_position = DiscretePosition.new(self)
-	discrete_position.move_speed = PUSH_SPEED
+	discrete_position.move_speed = FALL_SPEED
 	LevelGrid.add_object_to_grid(self)
 	
 	discrete_position.move_started.connect(_on_move_started)
@@ -55,7 +55,7 @@ func set_convey_speed(conveyer: DiscretePosition) -> void:
 	discrete_position.move_stopped.connect(_on_box_move_stopped, CONNECT_ONE_SHOT)
 
 func _on_box_move_stopped(_previous_position: Vector3i, _current_position: Vector3i) -> void:
-	discrete_position.move_speed = PUSH_SPEED
+	discrete_position.move_speed = FALL_SPEED
 
 func _on_move_started(_current: Vector3i, _target: Vector3i) -> void:
 	audio_player.stream = AUDIO_SLIDE

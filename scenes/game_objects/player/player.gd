@@ -1,6 +1,7 @@
 extends MovableObject
 
 @export var MAX_MOVE_SPEED: float = 7.0
+@export var PUSH_SPEED: float = 5.0
 
 const VEC_UP: Vector3i = Vector3i(0, 0, -1)
 const VEC_DOWN: Vector3i = Vector3i(0, 0, 1)
@@ -25,7 +26,7 @@ var step_alternator: bool = false
 
 func _ready() -> void:
 	discrete_position = DiscretePosition.new(self)
-	discrete_position.move_speed = MAX_MOVE_SPEED
+	discrete_position.move_speed = MAX_MOVE_SPEED * GameState.player_speed_modifier
 	LevelGrid.add_object_to_grid(self)
 	discrete_position.move_started.connect(_on_move_started)
 
@@ -125,7 +126,8 @@ func _on_move_started(_current: Vector3i, _target: Vector3i) -> void:
 
 func set_push_speed(box: DiscretePosition) -> void:
 	is_pushing = true
-	discrete_position.move_speed = box.move_speed
+	discrete_position.move_speed = PUSH_SPEED * GameState.player_speed_modifier
+	box.move_speed = PUSH_SPEED * GameState.player_speed_modifier
 	box.move_stopped.connect(_on_box_move_stopped, CONNECT_ONE_SHOT)
 	
 	audio_sfx.stream = AUDIO_GRUNT
@@ -134,7 +136,7 @@ func set_push_speed(box: DiscretePosition) -> void:
 
 func _on_box_move_stopped(_previous_position: Vector3i, _current_position: Vector3i) -> void:
 	is_pushing = false
-	discrete_position.move_speed = MAX_MOVE_SPEED
+	discrete_position.move_speed = MAX_MOVE_SPEED * GameState.player_speed_modifier
 
 func _update_rotation(direction: Vector3i) -> void:
 	var target_rotation_y = visuals.rotation_degrees.y
