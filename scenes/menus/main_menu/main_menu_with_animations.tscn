@@ -356,18 +356,19 @@ Ciph3rZer0"
 [node name="MenuButtonsContainer" parent="MenuContainer/MenuButtonsMargin" parent_id_path=PackedInt32Array(560400838) index="0" unique_id=2028947735]
 modulate = Color(1, 1, 1, 0)
 
-[node name="Game" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" index="0" unique_id=1661549495 instance=ExtResource("6_dhrx6")]
+[node name="Control" type="VBoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" index="0" unique_id=1733790636]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-offset_left = -200.0
-offset_top = -154.0
-offset_right = 200.0
-offset_bottom = -40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 362.0
+offset_bottom = -8.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+alignment = 2
+
+[node name="Game" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/Control" index="0" unique_id=1661549495 instance=ExtResource("6_dhrx6")]
+layout_mode = 2
 
 [node name="MenuButtonsBoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" index="1" unique_id=947594918]
 offset_top = -152.0
