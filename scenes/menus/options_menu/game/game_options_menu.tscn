@@ -21,6 +21,7 @@ script = ExtResource("2_t8t6j")
 search_depth = 2
 
 [node name="ResetGameControl" parent="VBoxContainer" unique_id=380075661 instance=ExtResource("3_pfgxr")]
+visible = false
 layout_mode = 2
 
 [node name="PlayerSpeed" type="HBoxContainer" parent="VBoxContainer" unique_id=1530970357]

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dnaejbfe1nvn1" path="res://scenes/windows/main_menu_credits_window.tscn" id="4_vsp5b"]
 [ext_resource type="PackedScene" uid="uid://cwt4p3bufkke5" path="res://addons/maaacks_game_template/base/nodes/windows/confirmation_overlaid_window.tscn" id="5_6xh1d"]
 [ext_resource type="Texture2D" uid="uid://d22xrh0hp8aj6" path="res://assets/images/elf-push.png" id="5_vsp5b"]
+[ext_resource type="PackedScene" uid="uid://cdqt3bebxpqxk" path="res://scenes/menus/options_menu/game/game_options_menu.tscn" id="6_dhrx6"]
 [ext_resource type="AudioStream" uid="uid://cr5fxabcbnl5r" path="res://assets/audio/music/jingle-not-a-jingle.mp3" id="6_ixa71"]
 [ext_resource type="Texture2D" uid="uid://nngqbykl2es1" path="res://assets/images/elf-jump.png" id="8_6xh1d"]
 
@@ -355,7 +356,22 @@ Ciph3rZer0"
 [node name="MenuButtonsContainer" parent="MenuContainer/MenuButtonsMargin" parent_id_path=PackedInt32Array(560400838) index="0" unique_id=2028947735]
 modulate = Color(1, 1, 1, 0)
 
-[node name="MenuButtonsBoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" index="0" unique_id=947594918]
+[node name="Game" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" index="0" unique_id=1661549495 instance=ExtResource("6_dhrx6")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = -154.0
+offset_right = 200.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MenuButtonsBoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" index="1" unique_id=947594918]
+offset_top = -152.0
+offset_bottom = 56.0
 lock = true
 
 [node name="ContinueGameButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="0" unique_id=370761406]
@@ -375,11 +391,6 @@ modulate = Color(1, 1, 1, 0)
 
 [node name="VersionLabel" parent="VersionMargin/VersionContainer" index="0" unique_id=700659389]
 text = "v1.0.3"
-
-[node name="ElfPush" type="Sprite2D" parent="VersionMargin" parent_id_path=PackedInt32Array(1386230870) index="1" unique_id=174447852]
-position = Vector2(158, 556)
-scale = Vector2(0.7222222, 0.7222222)
-texture = ExtResource("5_vsp5b")
 
 [node name="NewGameConfirmation" parent="." index="7" unique_id=1443913213 instance=ExtResource("5_6xh1d")]
 unique_name_in_owner = true
@@ -414,6 +425,11 @@ autoplay = true
 position = Vector2(1071, 226.00002)
 scale = Vector2(0.45254636, 0.45254636)
 texture = ExtResource("8_6xh1d")
+
+[node name="ElfPush" type="Sprite2D" parent="." index="12" unique_id=174447852]
+position = Vector2(158, 556)
+scale = Vector2(0.7222222, 0.7222222)
+texture = ExtResource("5_vsp5b")
 
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/ContinueGameButton" to="." method="_on_continue_game_button_pressed"]
 [connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer/LevelSelectButton" to="." method="_on_level_select_button_pressed"]

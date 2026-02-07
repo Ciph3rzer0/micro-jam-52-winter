@@ -12,13 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://c5q5fp0n2evh5" path="res://scenes/game_objects/box/box.tscn" id="10_mj6ss"]
 
 [node name="josh_easy_1" unique_id=1017434972 instance=ExtResource("1_aatyy")]
-blocks_to_win = 0
 time_limit_seconds = 10.0
 
-[node name="DirectionalLight3D" parent="." index="1"]
+[node name="DirectionalLight3D" parent="." index="1" unique_id=1694928679]
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." index="4"]
+[node name="Player" parent="." index="4" unique_id=2078089030]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
 
 [node name="Walls" type="Node3D" parent="." index="5" unique_id=1271192464]
