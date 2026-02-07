@@ -6,6 +6,7 @@ signal move_stopped(previous_position: Vector3i, current_position: Vector3i)
 
 var owner: Node3D
 var move_speed: float = 4.0
+var is_move_speed_modified: bool = false
 
 var is_moving = false
 var lerp_progress: float = 1.0
@@ -14,8 +15,12 @@ var current_position: Vector3i = Vector3i.ZERO
 var target_position: Vector3i = Vector3i.ZERO
 var last_move_direction: Vector3i = Vector3i.ZERO
 
-func _init(_owner: Node3D) -> void:
+func get_move_speed() -> float:
+	return move_speed * (GameState.player_speed_modifier if is_move_speed_modified else 1.0)
+
+func _init(_owner: Node3D, _is_move_speed_modified: bool = false)  -> void:
 	self.owner = _owner
+	self.is_move_speed_modified = _is_move_speed_modified
 	self.current_position = _get_discrete_position()
 	self.target_position = current_position
 	lerp_progress = 1.0
@@ -41,7 +46,7 @@ func move(direction: Vector3i) -> void:
 func tick(delta: float) -> void:
 	if not is_moving: return
 
-	lerp_progress += move_speed * delta
+	lerp_progress += move_speed * delta * (GameState.player_speed_modifier if is_move_speed_modified else 1.0)
 	lerp_progress = min(lerp_progress, 1.0)
 	
 	owner.global_position = Vector3(current_position).lerp(Vector3(target_position), lerp_progress)
