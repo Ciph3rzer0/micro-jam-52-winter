@@ -358,7 +358,7 @@ modulate = Color(1, 1, 1, 0)
 [node name="MenuButtonsBoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" index="0" unique_id=947594918]
 lock = true
 
-[node name="ContinueGameButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="1" unique_id=370761406]
+[node name="ContinueGameButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtonsBoxContainer" index="0" unique_id=370761406]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -372,6 +372,9 @@ text = "Level Select"
 
 [node name="VersionContainer" parent="VersionMargin" parent_id_path=PackedInt32Array(1386230870) index="0" unique_id=474610315]
 modulate = Color(1, 1, 1, 0)
+
+[node name="VersionLabel" parent="VersionMargin/VersionContainer" index="0" unique_id=700659389]
+text = "v1.0.3"
 
 [node name="ElfPush" type="Sprite2D" parent="VersionMargin" parent_id_path=PackedInt32Array(1386230870) index="1" unique_id=174447852]
 position = Vector2(158, 556)
