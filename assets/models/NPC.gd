@@ -9,11 +9,9 @@ var victory_mode: bool = false
 const AUDIO_JINGLE_ACQUIRED = preload("res://assets/audio/sfx/jingle-acquired.mp3")
 
 func _ready() -> void:
-	super._ready()
 	add_to_group("foreman")
 
-func _process(delta: float) -> void:
-	super._process(delta) # MovableObject uses _process for physics/tick
+func _process(_delta: float) -> void:
 	_update_animation_state()
 
 func _update_animation_state() -> void:
