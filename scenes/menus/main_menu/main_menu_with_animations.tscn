@@ -391,7 +391,7 @@ text = "Level Select"
 modulate = Color(1, 1, 1, 0)
 
 [node name="VersionLabel" parent="VersionMargin/VersionContainer" index="0" unique_id=700659389]
-text = "v1.0.3"
+text = "v1.0.4"
 
 [node name="NewGameConfirmation" parent="." index="7" unique_id=1443913213 instance=ExtResource("5_6xh1d")]
 unique_name_in_owner = true
