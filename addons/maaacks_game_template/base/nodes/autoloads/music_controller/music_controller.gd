@@ -24,7 +24,7 @@ const MINIMUM_VOLUME_DB = -80
 @export var fade_in_duration : float = 0.0 :
 	set(value):
 		fade_in_duration = value
-		if fade_in_duration < 0:
+		if fade_in_duration < 0:	
 			fade_in_duration = 0
 
 ## Matched stream players with no stream set will stop current playback.
@@ -115,13 +115,16 @@ func _blend_and_connect_stream_player(stream_player : AudioStreamPlayer) -> void
 	_connect_stream_on_tree_exiting(music_stream_player)
 
 func play_stream_player(stream_player : AudioStreamPlayer) -> void:
-	if stream_player == music_stream_player : return
-	if stream_player.stream == null and not empty_streams_stop_player:
-			return
-	if _is_matching_stream(stream_player) : 
-		_blend_and_remove_stream_player(stream_player)
-	else:
-		_blend_and_connect_stream_player(stream_player)
+	return
+	#if stream_player == music_stream_player : return
+	#if stream_player.stream == null and not empty_streams_stop_player:
+			#return
+	#if _is_matching_stream(stream_player) : 
+		#_blend_and_remove_stream_player(stream_player)
+		#print("blended and removed stream player (music controller)")	
+	#else:
+		#_blend_and_connect_stream_player(stream_player)
+		#print("blended and connected stream player (music controller)")
 
 func get_stream_player(audio_stream : AudioStream) -> AudioStreamPlayer:
 	var stream_player := AudioStreamPlayer.new()
